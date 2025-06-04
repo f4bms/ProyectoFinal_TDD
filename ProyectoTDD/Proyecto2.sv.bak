@@ -1,0 +1,34 @@
+module Proyecto2( // No es proyecto 1?
+    input logic clk, reset
+);
+
+logic [31:0] Instruction; // Instrucción de 32 bits
+logic [31:0] PC; // Contador de Programa
+
+// Memoria de instrucciones
+InstMemory inst_mem (
+    .clk(clk),
+    .reset(reset),
+    .PC(PC),
+    .instruction(Instruction)
+);
+
+DataMemory data_mem (
+    .clk(clk),
+    .reset(reset),
+    .A(PC), // Asumiendo que la dirección es el PC
+    .WD(Instruction), // Placeholder para los datos a escribir
+    .WE(1'b0), // No se escribe en este momento
+    .RD() // No se usa en este momento
+);
+
+// Procesador ARMv4
+ProcesadorARMv4 proc (
+    .clk(clk),
+    .reset(reset),
+    .Instruction(Instruction), // Placeholder para la instrucción
+    .PC(PC) // Salida del PC
+);
+
+
+endmodule
