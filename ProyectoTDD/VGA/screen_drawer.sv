@@ -17,51 +17,46 @@ parameter offset_x = 184;
 parameter offset_y = 128;
 parameter hori_back  = 144;
 parameter vert_back  = 34;
+ 
 
-//image pixel colors				 
-parameter mem_door_closed = "Assets/memory.mem";
-/*parameter mem_door_open = "Assets/memory.mem";
-parameter mem_heart_full = "Assets/memory.mem";
-parameter mem_heart_closed = "Assets/memory.mem";*/
+// Door image data
+parameter DOOR_WIDTH = 112;
+parameter DOOR_HEIGHT = 156;		  
+logic [(2**$clog2(DOOR_HEIGHT*DOOR_WIDTH))-1:0] door_address;
+logic [23:0] memory_open [0:17471];
+logic [23:0] memory_closed [0:17471];
 
-parameter IMAGE_WIDTH = 160;
-parameter IMAGE_HEIGHT = 224;
+parameter HEART_WH = 20;	  
+logic [(2**$clog2(HEART_WH*HEART_WH))-1:0] heart_address;
+logic [23:0] memory_heart [0:399];
 
-(* RAM_STYLE="BLOCK" *)
-logic [23:0]REGMEM_door_closed[0:(2**$clog2(IMAGE_HEIGHT*IMAGE_WIDTH))-1];
-/*logic [23:0]REGMEM_door_open[0:(2**$clog2(IMAGE_HEIGHT*IMAGE_WIDTH))-1];
-logic [23:0]REGMEM_heart_full[0:(2**$clog2(IMAGE_HEIGHT*IMAGE_WIDTH))-1];
-logic [23:0]REGMEM_heart_empty[0:(2**$clog2(IMAGE_HEIGHT*IMAGE_WIDTH))-1];*/
 
-initial 
-	//$readmemh("hex_memory_file.mem", memory_array, [start_address], [end_address])
-	begin
-		$readmemh(mem_door_closed, REGMEM_door_closed, 0,  IMAGE_WIDTH*IMAGE_HEIGHT);
-	end
-		  
-logic [(2**$clog2(IMAGE_HEIGHT*IMAGE_WIDTH))-1:0] address;
+sprites sprites(
+	.door_open(memory_open),
+	.door_closed(memory_closed),
+	.heart(memory_heart));
 
 always @ (posedge clk)
 		begin
 			// First row
-			if(y > 128 && y <= 352)
+			if(y > 128 && y <= 284)
 				begin
 					//First col
-					if(x >= 184 && x < 344) begin
-						address <= ((y - offset_y) * (IMAGE_WIDTH)) + (x - offset_x);
-						rgb_color <= REGMEM_door_closed[address];
+					if(x >= 184 && x < 296) begin
+						door_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x);
+						rgb_color <= memory_open[door_address];
 					end
-					if(x >= 344 && x < 504) begin
-						address <= ((y - offset_y) * (IMAGE_WIDTH)) + (x - offset_x) - IMAGE_WIDTH;
-						rgb_color <= REGMEM_door_closed[address];
+					if(x >= 296 && x < 408) begin
+						door_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH;
+						rgb_color <= memory_open[door_address];
 					end
-					if(x >= 504 && x < 664) begin
-						address <= ((y - offset_y) * (IMAGE_WIDTH)) + (x - offset_x) - IMAGE_WIDTH*2;
-						rgb_color <= REGMEM_door_closed[address];
+					if(x >= 408 && x < 520) begin
+						door_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*2;
+						rgb_color <= memory_open[door_address];
 					end
-					if(x >= 664 && x < 824) begin
-						address <= ((y - offset_y) * (IMAGE_WIDTH)) + (x - offset_x) - IMAGE_WIDTH*3;
-						rgb_color <= REGMEM_door_closed[address];
+					if(x >= 520 && x < 632) begin
+						door_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*3;
+						rgb_color <= memory_open[door_address];
 					end
 					else
 						rgb_color <= 24'hFFFFFF;

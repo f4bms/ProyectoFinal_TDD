@@ -1,5 +1,5 @@
 Flow report for Proyecto2
-Tue Jun 03 20:18:22 2025
+Wed Jun 04 09:47:41 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,24 +37,29 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Flow Failed - Tue Jun 03 20:18:22 2025      ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; Proyecto2                                   ;
-; Top-level Entity Name       ; main                                        ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CSXFC6D6F31C6                              ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Wed Jun 04 09:47:28 2025       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; Proyecto2                                   ;
+; Top-level Entity Name           ; main                                        ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSXFC6D6F31C6                              ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 20 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 33                                          ;
+; Total pins                      ; 44 / 499 ( 9 % )                            ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
+; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                               ;
+; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                               ;
+; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                               ;
+; Total HSSI PMA TX Serializers   ; 0 / 9 ( 0 % )                               ;
+; Total PLLs                      ; 0 / 15 ( 0 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -62,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/03/2025 20:18:15 ;
+; Start date & time ; 06/04/2025 09:16:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Proyecto2           ;
 +-------------------+---------------------+
@@ -73,14 +78,11 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 18691165529652.174900349504476         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 80202061532231.174905018216872         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (Verilog)            ; <None>        ; --          ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; main        ; Top                               ;
@@ -98,8 +100,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4790 MB             ; 00:00:15                           ;
-; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:15                           ;
+; Analysis & Synthesis ; 00:29:18     ; 1.0                     ; 5866 MB             ; 00:29:06                           ;
+; Fitter               ; 00:01:17     ; 1.0                     ; 6561 MB             ; 00:02:00                           ;
+; Assembler            ; 00:00:25     ; 1.0                     ; 4832 MB             ; 00:00:15                           ;
+; Timing Analyzer      ; 00:00:12     ; 1.1                     ; 5109 MB             ; 00:00:10                           ;
+; Total                ; 00:31:12     ; --                      ; --                  ; 00:31:31                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,7 +113,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-9KNP9PC  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; Karina-Laptop    ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Karina-Laptop    ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Karina-Laptop    ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Karina-Laptop    ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -116,6 +124,9 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Proyecto2 -c Proyecto2
+quartus_fit --read_settings_files=off --write_settings_files=off Proyecto2 -c Proyecto2
+quartus_asm --read_settings_files=off --write_settings_files=off Proyecto2 -c Proyecto2
+quartus_sta Proyecto2 -c Proyecto2
 
 
 
