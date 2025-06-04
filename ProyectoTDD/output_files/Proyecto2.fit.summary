@@ -1,20 +1,20 @@
-Fitter Status : Successful - Sun Jun  1 13:18:47 2025
-Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Fitter Status : Successful - Tue Jun 03 18:56:21 2025
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Proyecto2
-Top-level Entity Name : Deco
+Top-level Entity Name : main
 Family : Cyclone V
-Device : 5CGXFC7C7F23C8
+Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 11 / 56,480 ( < 1 % )
-Total registers : 0
-Total pins : 29 / 268 ( 11 % )
+Logic utilization (in ALMs) : 32,728 / 41,910 ( 78 % )
+Total registers : 85
+Total pins : 44 / 499 ( 9 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 7,024,640 ( 0 % )
-Total RAM Blocks : 0 / 686 ( 0 % )
-Total DSP Blocks : 0 / 156 ( 0 % )
-Total HSSI RX PCSs : 0 / 6 ( 0 % )
-Total HSSI PMA RX Deserializers : 0 / 6 ( 0 % )
-Total HSSI TX PCSs : 0 / 6 ( 0 % )
-Total HSSI PMA TX Serializers : 0 / 6 ( 0 % )
-Total PLLs : 0 / 13 ( 0 % )
+Total block memory bits : 0 / 5,662,720 ( 0 % )
+Total RAM Blocks : 0 / 553 ( 0 % )
+Total DSP Blocks : 1 / 112 ( < 1 % )
+Total HSSI RX PCSs : 0 / 9 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 9 ( 0 % )
+Total HSSI TX PCSs : 0 / 9 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 9 ( 0 % )
+Total PLLs : 0 / 15 ( 0 % )
 Total DLLs : 0 / 4 ( 0 % )
