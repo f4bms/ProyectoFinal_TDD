@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proyecto2
-Tue Jun 03 20:18:22 2025
+Wed Jun 04 09:45:41 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,8 +10,24 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Parameter Settings for User Entity Instance: clock_div:clock_divider
+ 13. Parameter Settings for User Entity Instance: screen_drawer:screen
+ 14. Parameter Settings for User Entity Instance: screen_drawer:screen|counter:counter_x
+ 15. Parameter Settings for User Entity Instance: screen_drawer:screen|counter:counter_y
+ 16. Parameter Settings for User Entity Instance: vga_driver:driver|video_sync_generator:video_sync
+ 17. Port Connectivity Checks: "screen_drawer:screen|counter:counter_y"
+ 18. Port Connectivity Checks: "screen_drawer:screen|counter:counter_x"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -34,22 +50,27 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue Jun 03 20:18:22 2025           ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; Proyecto2                                   ;
-; Top-level Entity Name       ; main                                        ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Jun 04 09:45:41 2025       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; Proyecto2                                   ;
+; Top-level Entity Name           ; main                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 26                                          ;
+; Total pins                      ; 44                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -144,15 +165,261 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; VGA/video_sync_generator.sv      ; yes             ; User SystemVerilog HDL File  ; C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/video_sync_generator.sv ;         ;
+; VGA/vga_driver.sv                ; yes             ; User SystemVerilog HDL File  ; C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/vga_driver.sv           ;         ;
+; VGA/screen_drawer.sv             ; yes             ; User SystemVerilog HDL File  ; C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/screen_drawer.sv        ;         ;
+; VGA/counter.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/counter.sv              ;         ;
+; VGA/clock_div.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/clock_div.sv            ;         ;
+; main.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv                     ;         ;
+; VGA/sprites.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/sprites.sv              ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                   ;
++---------------------------------------------+---------------------------------+
+; Resource                                    ; Usage                           ;
++---------------------------------------------+---------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 20                              ;
+;                                             ;                                 ;
+; Combinational ALUT usage for logic          ; 33                              ;
+;     -- 7 input functions                    ; 0                               ;
+;     -- 6 input functions                    ; 5                               ;
+;     -- 5 input functions                    ; 3                               ;
+;     -- 4 input functions                    ; 3                               ;
+;     -- <=3 input functions                  ; 22                              ;
+;                                             ;                                 ;
+; Dedicated logic registers                   ; 26                              ;
+;                                             ;                                 ;
+; I/O pins                                    ; 44                              ;
+;                                             ;                                 ;
+; Total DSP Blocks                            ; 0                               ;
+;                                             ;                                 ;
+; Maximum fan-out node                        ; clock_div:clock_divider|clk_out ;
+; Maximum fan-out                             ; 25                              ;
+; Total fan-out                               ; 250                             ;
+; Average fan-out                             ; 1.70                            ;
++---------------------------------------------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name          ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+----------------------+--------------+
+; |main                                   ; 33 (0)              ; 26 (0)                    ; 0                 ; 0          ; 44   ; 0            ; |main                                                   ; main                 ; work         ;
+;    |clock_div:clock_divider|            ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |main|clock_div:clock_divider                           ; clock_div            ; work         ;
+;    |vga_driver:driver|                  ; 32 (0)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |main|vga_driver:driver                                 ; vga_driver           ; work         ;
+;       |video_sync_generator:video_sync| ; 32 (32)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |main|vga_driver:driver|video_sync_generator:video_sync ; video_sync_generator ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                  ;
++-------------------------------------------------+---------------------------------------------------+
+; Register name                                   ; Reason for Removal                                ;
++-------------------------------------------------+---------------------------------------------------+
+; screen_drawer:screen|counter:counter_y|q[0..9]  ; Stuck at GND due to stuck port clock              ;
+; screen_drawer:screen|counter:counter_x|q[0..9]  ; Stuck at GND due to stuck port clock              ;
+; screen_drawer:screen|door_address[3,6,10]       ; Merged with screen_drawer:screen|door_address[14] ;
+; screen_drawer:screen|door_address[0..2,11,12]   ; Merged with screen_drawer:screen|door_address[13] ;
+; screen_drawer:screen|door_address[4]            ; Merged with screen_drawer:screen|door_address[7]  ;
+; screen_drawer:screen|door_address[5,7..9,13,14] ; Stuck at GND due to stuck port clock_enable       ;
+; screen_drawer:screen|rgb_color[0..23]           ; Stuck at VCC due to stuck port data_in            ;
+; clock_div:clock_divider|counter[1]              ; Stuck at GND due to stuck port data_in            ;
+; Total Number of Removed Registers = 60          ;                                                   ;
++-------------------------------------------------+---------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                           ;
++---------------------------------------------+-------------------------+-------------------------------------------------------------------------------+
+; Register name                               ; Reason for Removal      ; Registers Removed due to This Register                                        ;
++---------------------------------------------+-------------------------+-------------------------------------------------------------------------------+
+; screen_drawer:screen|counter:counter_y|q[3] ; Stuck at GND            ; screen_drawer:screen|door_address[14], screen_drawer:screen|door_address[13], ;
+;                                             ; due to stuck port clock ; screen_drawer:screen|door_address[9], screen_drawer:screen|door_address[8],   ;
+;                                             ;                         ; screen_drawer:screen|door_address[7], screen_drawer:screen|door_address[5],   ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[23], screen_drawer:screen|rgb_color[22],       ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[21], screen_drawer:screen|rgb_color[20],       ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[19], screen_drawer:screen|rgb_color[18],       ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[17], screen_drawer:screen|rgb_color[16],       ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[15], screen_drawer:screen|rgb_color[14],       ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[13], screen_drawer:screen|rgb_color[12],       ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[11], screen_drawer:screen|rgb_color[10],       ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[9], screen_drawer:screen|rgb_color[8],         ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[7], screen_drawer:screen|rgb_color[6],         ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[5], screen_drawer:screen|rgb_color[4],         ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[3], screen_drawer:screen|rgb_color[2],         ;
+;                                             ;                         ; screen_drawer:screen|rgb_color[1], screen_drawer:screen|rgb_color[0]          ;
++---------------------------------------------+-------------------------+-------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 26    ;
+; Number of registers using Synchronous Clear  ; 21    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 21    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; clock_div:clock_divider|counter[0]     ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_div:clock_divider ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; DIV            ; 2     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: screen_drawer:screen ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; offset_x       ; 184   ; Signed Integer                           ;
+; offset_y       ; 128   ; Signed Integer                           ;
+; hori_back      ; 144   ; Signed Integer                           ;
+; vert_back      ; 34    ; Signed Integer                           ;
+; DOOR_WIDTH     ; 112   ; Signed Integer                           ;
+; DOOR_HEIGHT    ; 156   ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: screen_drawer:screen|counter:counter_x ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; N              ; 10    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: screen_drawer:screen|counter:counter_y ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; N              ; 10    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_driver:driver|video_sync_generator:video_sync ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; hori_line      ; 800   ; Signed Integer                                                        ;
+; hori_back      ; 144   ; Signed Integer                                                        ;
+; hori_front     ; 16    ; Signed Integer                                                        ;
+; vert_line      ; 525   ; Signed Integer                                                        ;
+; vert_back      ; 34    ; Signed Integer                                                        ;
+; vert_front     ; 11    ; Signed Integer                                                        ;
+; H_sync_cycle   ; 96    ; Signed Integer                                                        ;
+; V_sync_cycle   ; 2     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "screen_drawer:screen|counter:counter_y" ;
++-----------+--------+----------+------------------------------------+
+; Port      ; Type   ; Severity ; Details                            ;
++-----------+--------+----------+------------------------------------+
+; clk       ; Input  ; Info     ; Stuck at GND                       ;
+; reset     ; Input  ; Info     ; Stuck at GND                       ;
+; max[3..2] ; Input  ; Info     ; Stuck at VCC                       ;
+; max[8..4] ; Input  ; Info     ; Stuck at GND                       ;
+; max[1..0] ; Input  ; Info     ; Stuck at GND                       ;
+; max[9]    ; Input  ; Info     ; Stuck at VCC                       ;
+; done      ; Output ; Info     ; Explicitly unconnected             ;
++-----------+--------+----------+------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "screen_drawer:screen|counter:counter_x" ;
++-----------+-------+----------+-------------------------------------+
+; Port      ; Type  ; Severity ; Details                             ;
++-----------+-------+----------+-------------------------------------+
+; clk       ; Input ; Info     ; Stuck at GND                        ;
+; enable    ; Input ; Info     ; Stuck at VCC                        ;
+; reset     ; Input ; Info     ; Stuck at GND                        ;
+; max[9..8] ; Input ; Info     ; Stuck at VCC                        ;
+; max[4..0] ; Input ; Info     ; Stuck at VCC                        ;
+; max[7..5] ; Input ; Info     ; Stuck at GND                        ;
++-----------+-------+----------+-------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 26                          ;
+;     CLR SCLR          ; 11                          ;
+;     ENA CLR SCLR      ; 10                          ;
+;     plain             ; 5                           ;
+; arriav_lcell_comb     ; 34                          ;
+;     arith             ; 21                          ;
+;         1 data inputs ; 21                          ;
+;     normal            ; 13                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 5                           ;
+; boundary_port         ; 44                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.74                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,42 +428,100 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jun 03 20:18:15 2025
+    Info: Processing started: Wed Jun 04 09:16:21 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proyecto2 -c Proyecto2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga/video_sync_generator.sv
-    Info (12023): Found entity 1: video_sync_generator File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/video_sync_generator.sv Line: 1
+    Info (12023): Found entity 1: video_sync_generator File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/video_sync_generator.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga/vga_driver.sv
-    Info (12023): Found entity 1: vga_driver File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/vga_driver.sv Line: 2
-Warning (10335): Unrecognized synthesis attribute "RAM_STYLE" at VGA/screen_drawer.sv(30) File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 30
+    Info (12023): Found entity 1: vga_driver File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/vga_driver.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file vga/screen_drawer.sv
-    Info (12023): Found entity 1: screen_drawer File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 1
+    Info (12023): Found entity 1: screen_drawer File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga/counter.sv
-    Info (12023): Found entity 1: counter File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/counter.sv Line: 1
+    Info (12023): Found entity 1: counter File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/counter.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga/clock_div.sv
-    Info (12023): Found entity 1: clock_div File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/clock_div.sv Line: 1
+    Info (12023): Found entity 1: clock_div File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/clock_div.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file deco.sv
-    Info (12023): Found entity 1: Deco File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/Deco.sv Line: 6
+    Info (12023): Found entity 1: Deco File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/Deco.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file main.sv
-    Info (12023): Found entity 1: main File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at screen_drawer.sv(12): created implicit net for "VGA_CLK" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 12
-Warning (10236): Verilog HDL Implicit Net warning at screen_drawer.sv(12): created implicit net for "reset" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 12
+    Info (12023): Found entity 1: main File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga/sprites.sv
+    Info (12023): Found entity 1: sprites File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/sprites.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at screen_drawer.sv(12): created implicit net for "VGA_CLK" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 12
+Warning (10236): Verilog HDL Implicit Net warning at screen_drawer.sv(12): created implicit net for "reset" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 12
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Error (10928): SystemVerilog error at main.sv(27): packed array type cannot be assigned to unpacked array type - types do not match File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 27
-Error (10716): SystemVerilog error at main.sv(27): can't pass value from actual to formal input "rgb_color" with incompatible type File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 27
-Error (12153): Can't elaborate top-level user hierarchy
-Info (144001): Generated suppressed messages file C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/output_files/Proyecto2.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 4 warnings
-    Error: Peak virtual memory: 4790 megabytes
-    Error: Processing ended: Tue Jun 03 20:18:22 2025
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:15
+Info (12128): Elaborating entity "clock_div" for hierarchy "clock_div:clock_divider" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 17
+Warning (10230): Verilog HDL assignment warning at clock_div.sv(5): truncated value with size 32 to match size of target (2) File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/clock_div.sv Line: 5
+Warning (10230): Verilog HDL assignment warning at clock_div.sv(9): truncated value with size 32 to match size of target (2) File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/clock_div.sv Line: 9
+Info (12128): Elaborating entity "screen_drawer" for hierarchy "screen_drawer:screen" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 23
+Warning (10030): Net "VGA_CLK" at screen_drawer.sv(12) has no driver or initial value, using a default initial value '0' File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 12
+Warning (10030): Net "reset" at screen_drawer.sv(12) has no driver or initial value, using a default initial value '0' File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 12
+Info (12128): Elaborating entity "counter" for hierarchy "screen_drawer:screen|counter:counter_x" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 12
+Warning (10230): Verilog HDL assignment warning at counter.sv(18): truncated value with size 32 to match size of target (10) File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/counter.sv Line: 18
+Info (12128): Elaborating entity "sprites" for hierarchy "screen_drawer:screen|sprites:sprites" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 30
+Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:driver" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 35
+Info (12128): Elaborating entity "video_sync_generator" for hierarchy "vga_driver:driver|video_sync_generator:video_sync" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/vga_driver.sv Line: 21
+Warning (10230): Verilog HDL assignment warning at video_sync_generator.sv(38): truncated value with size 32 to match size of target (10) File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/video_sync_generator.sv Line: 38
+Warning (10230): Verilog HDL assignment warning at video_sync_generator.sv(41): truncated value with size 32 to match size of target (11) File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/video_sync_generator.sv Line: 41
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_R[0]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 10
+    Warning (13410): Pin "VGA_R[1]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 10
+    Warning (13410): Pin "VGA_R[2]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 10
+    Warning (13410): Pin "VGA_R[3]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 10
+    Warning (13410): Pin "VGA_R[4]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 10
+    Warning (13410): Pin "VGA_R[5]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 10
+    Warning (13410): Pin "VGA_R[6]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 10
+    Warning (13410): Pin "VGA_R[7]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 10
+    Warning (13410): Pin "VGA_G[0]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 11
+    Warning (13410): Pin "VGA_G[1]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 11
+    Warning (13410): Pin "VGA_G[2]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 11
+    Warning (13410): Pin "VGA_G[3]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 11
+    Warning (13410): Pin "VGA_G[4]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 11
+    Warning (13410): Pin "VGA_G[5]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 11
+    Warning (13410): Pin "VGA_G[6]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 11
+    Warning (13410): Pin "VGA_G[7]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 11
+    Warning (13410): Pin "VGA_B[0]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 12
+    Warning (13410): Pin "VGA_B[1]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 12
+    Warning (13410): Pin "VGA_B[2]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 12
+    Warning (13410): Pin "VGA_B[3]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 12
+    Warning (13410): Pin "VGA_B[4]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 12
+    Warning (13410): Pin "VGA_B[5]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 12
+    Warning (13410): Pin "VGA_B[6]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 12
+    Warning (13410): Pin "VGA_B[7]" is stuck at VCC File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/output_files/Proyecto2.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 14 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 3
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 3
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 3
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 3
+    Warning (15610): No output dependent on input pin "serial_in" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 4
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/main.sv Line: 5
+Info (21057): Implemented 78 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 34 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info: Peak virtual memory: 5866 megabytes
+    Info: Processing ended: Wed Jun 04 09:45:41 2025
+    Info: Elapsed time: 00:29:20
+    Info: Total CPU time (on all processors): 00:29:07
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/output_files/Proyecto2.map.smsg.
+The suppressed messages can be found in C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/output_files/Proyecto2.map.smsg.
 
 
