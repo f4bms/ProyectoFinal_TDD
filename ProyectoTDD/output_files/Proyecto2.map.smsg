@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at screen_drawer.sv(32): always construct contains both blocking and non-blocking assignments File: C:/TEC/2025/Quartus/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 32
+Warning (10268): Verilog HDL information at screen_drawer.sv(47): always construct contains both blocking and non-blocking assignments File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 47

@@ -17,9 +17,16 @@ clock_div clock_divider(
 	.clk_out(VGA_CLK));
 
 logic [23:0] rgb_color;
+
+logic [1:0] correct_door = 2'b01;
+logic [1:0] p1_lives = 2'b01;
+logic [1:0] p2_lives = 2'b11;
+logic time_up = 1;
 				 
 screen_drawer screen( 
 	.clk(VGA_CLK),
+	.correct_door(correct_door),
+	.time_up(time_up),
 	.rgb_color(rgb_color));
 
 vga_driver driver(
