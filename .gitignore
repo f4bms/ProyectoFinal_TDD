@@ -4,5 +4,4 @@ incremental_db
 .qsys_edit
 simulation
 #output_files
-*.py
 .vscode

@@ -21,24 +21,26 @@ parameter vert_back  = 34;
 
 // Door image data
 parameter DOOR_WIDTH = 112;
-parameter CLOSED_HEIGHT = 156;
-parameter OPEN_HEIGHT = 181;
+parameter DOOR_HEIGHT = 156;
 parameter offset_x = 240;
 parameter offset_y = 162;		  
-logic [(2**$clog2(CLOSED_HEIGHT*DOOR_WIDTH))-1:0] closed_address;
-logic [(2**$clog2(OPEN_HEIGHT*DOOR_WIDTH))-1:0] open_address;
-logic [23:0] memory_open [0:20271];
-logic [23:0] memory_closed [0:17471];
+logic [(2**$clog2(DOOR_HEIGHT*DOOR_WIDTH))-1:0] closed_address;
+logic [(2**$clog2(DOOR_HEIGHT*DOOR_WIDTH))-1:0] open_address;
+logic [3:0] memory_open [0:17471];
+logic [3:0] memory_closed [0:17471];
 
-parameter HEART_WH = 20;	  
-logic [(2**$clog2(HEART_WH*HEART_WH))-1:0] heart_address;
-logic [23:0] memory_heart [0:399];
+parameter HEART_WIDTH = 22;
+parameter HEART_HEIGHT = 20;
+parameter heart_offset_x = 240;
+parameter heart_offset_y = 100;		  
+logic [(2**$clog2(HEART_WIDTH*HEART_HEIGHT))-1:0] heart_address;
+logic [3:0] memory_heart [0:439];
 
 
 sprites sprites(
 	.door_open(memory_open),
-	.door_closed(memory_closed)
-	//.heart(memory_heart)
+	.door_closed(memory_closed),
+	.heart(memory_heart)
 );
 
 logic [3:0] color;
@@ -50,8 +52,17 @@ color_decoder decoder(
 
 always @ (posedge clk)
 		begin
+		//lives
+			if(y > heart_offset_y && y <= 119) begin
+					if(x >= heart_offset_x && x < 259) begin
+						heart_address <= ((y - heart_offset_y) * (HEART_WIDTH)) + (x - heart_offset_x);
+						color <= memory_heart[heart_address];
+					end
+					else
+						color <= 4'b1110;
+				end
 			// Doors
-			if(y > offset_y && y <= 343)
+			else if(y > offset_y && y <= 317)
 				begin
 					if(x >= offset_x && x < 352) begin
 						if(correct_door == 2'b00 && time_up) begin
@@ -83,7 +94,7 @@ always @ (posedge clk)
 							color <= memory_closed[closed_address];
 						end
 					end
-					else if(x >= 576 && x < 688) begin
+					else if(x >= 576 && x < 687) begin
 						if(correct_door == 2'b11 && time_up) begin
 							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*2;
 							color <= memory_open[open_address];

@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE 5CSXFC6D6F31C6
 set_global_assignment -name TOP_LEVEL_ENTITY main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:08:20  JUNE 01, 2025"
-set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
@@ -172,8 +172,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE VGA/clock_div.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Deco.sv
 set_global_assignment -name SYSTEMVERILOG_FILE main.sv
 set_global_assignment -name SYSTEMVERILOG_FILE VGA/sprites.sv
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE BaudRate.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Sec_conx.sv
 set_global_assignment -name SYSTEMVERILOG_FILE UART_Conx.sv
+
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

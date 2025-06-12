@@ -21,7 +21,8 @@ always_comb
 			4'b1100 : rgb_color = 24'hf9d080; 
 			4'b1101 : rgb_color = 24'hfb8347; 
 			4'b1110 : rgb_color = 24'h2f2a4b;
-			default : rgb_color = 24'h000000; 
+			4'b1111 : rgb_color = 24'he01f1f;
+			default : rgb_color = 24'h2f2a4b; 
 		endcase
 	end
 endmodule
