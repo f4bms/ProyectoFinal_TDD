@@ -1,6 +1,6 @@
 module screen_drawer(
 	input  logic clk,
-	input  logic [1:0] correct_door,
+	input  logic [1:0] correct_door, p1_lives, p2_lives,
 	input  logic time_up,
 	output logic [23:0] rgb_color
 );
@@ -52,16 +52,83 @@ color_decoder decoder(
 
 always @ (posedge clk)
 		begin
-		//lives
+		   // lives  //////////////////////////////////////////////////////////////////////////
 			if(y > heart_offset_y && y <= 119) begin
-					if(x >= heart_offset_x && x < 259) begin
-						heart_address <= ((y - heart_offset_y) * (HEART_WIDTH)) + (x - heart_offset_x);
-						color <= memory_heart[heart_address];
-					end
-					else
-						color <= 4'b1110;
+				if(x >= hori_back && x < heart_offset_x || x >= 688)
+					color <= 4'b1110;
+				else if(p1_lives == 2'b01 && x >= heart_offset_x && x < 262) begin
+					heart_address <= ((y - heart_offset_y) * (HEART_WIDTH)) + (x - heart_offset_x);
+					color <= memory_heart[heart_address];
 				end
-			// Doors
+				else if(p1_lives == 2'b01 && x >= 262 && x < 284) begin
+					color <= 4'b1110;
+				end
+				else if(p1_lives == 2'b01 && x >= 284 && x < 306) begin
+					color <= 4'b1110;
+				end
+				if(p1_lives == 2'b10 && x >= heart_offset_x && x < 262) begin
+					heart_address <= ((y - heart_offset_y) * (HEART_WIDTH)) + (x - heart_offset_x);
+					color <= memory_heart[heart_address];
+				end
+				else if(p1_lives == 2'b10 && x >= 262 && x < 284) begin
+					heart_address <= ((y - heart_offset_y) * (HEART_WIDTH)) + (x - heart_offset_x) - HEART_WIDTH;
+					color <= memory_heart[heart_address];
+				end
+				else if(p1_lives == 2'b10 && x >= 284 && x < 306) begin
+					color <= 4'b1110;
+				end
+				if(p1_lives == 2'b11 && x >= heart_offset_x && x < 262) begin
+					heart_address <= ((y - heart_offset_y) * (HEART_WIDTH)) + (x - heart_offset_x);
+					color <= memory_heart[heart_address];
+				end
+				else if(p1_lives == 2'b11 && x >= 262 && x < 284) begin
+					heart_address <= ((y - heart_offset_y) * (HEART_WIDTH)) + (x - heart_offset_x) - HEART_WIDTH;
+					color <= memory_heart[heart_address];
+				end
+				else if(p1_lives == 2'b11 && x >= 284 && x < 306) begin
+					heart_address <= ((y - heart_offset_y) * (HEART_WIDTH)) + (x - heart_offset_x) - HEART_WIDTH*2;
+					color <= memory_heart[heart_address];
+				end
+				if(x >= 306 && x < 622) begin
+					color <= 4'b1110;
+				end
+				if(p2_lives == 2'b01 && x >= 622 && x < 644) begin
+					heart_address <= ((y - heart_offset_y -158) * (HEART_WIDTH)) + (x - heart_offset_x);
+					color <= memory_heart[heart_address];
+				end
+				else if(p2_lives == 2'b01 && x >= 644 && x < 666) begin
+					color <= 4'b1110;
+				end
+				else if(p2_lives == 2'b01 && x >= 666 && x < 688) begin
+					color <= 4'b1110;
+				end
+				
+				if(p2_lives == 2'b10 && x >= 622 && x < 644) begin
+					heart_address <= ((y - heart_offset_y -158) * (HEART_WIDTH)) + (x - heart_offset_x);
+					color <= memory_heart[heart_address];
+				end
+				else if(p2_lives == 2'b10 && x >= 644 && x < 666) begin
+					heart_address <= ((y - heart_offset_y -158) * (HEART_WIDTH)) + (x - heart_offset_x) - HEART_WIDTH;
+					color <= memory_heart[heart_address];
+				end
+				else if(p2_lives == 2'b10 && x >= 666 && x < 688) begin
+					color <= 4'b1110;
+				end
+
+				if(p2_lives == 2'b11 && x >= 622 && x < 644) begin
+					heart_address <= ((y - heart_offset_y -158) * (HEART_WIDTH)) + (x - heart_offset_x);
+					color <= memory_heart[heart_address];
+				end
+				else if(p2_lives == 2'b11 && x >= 644 && x < 666) begin
+					heart_address <= ((y - heart_offset_y -158) * (HEART_WIDTH)) + (x - heart_offset_x) - HEART_WIDTH;
+					color <= memory_heart[heart_address];
+				end
+				else if(p2_lives == 2'b11 && x >= 666 && x < 688) begin
+					heart_address <= ((y - heart_offset_y -158) * (HEART_WIDTH)) + (x - heart_offset_x) - HEART_WIDTH*2;
+					color <= memory_heart[heart_address];
+				end
+			end
+			// Doors ////////////////////////////////////////////////////////////////////////
 			else if(y > offset_y && y <= 317)
 				begin
 					if(x >= offset_x && x < 352) begin
@@ -94,13 +161,13 @@ always @ (posedge clk)
 							color <= memory_closed[closed_address];
 						end
 					end
-					else if(x >= 576 && x < 687) begin
+					else if(x >= 576 && x < 688) begin
 						if(correct_door == 2'b11 && time_up) begin
-							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*2;
+							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*3;
 							color <= memory_open[open_address];
 						end
 						else begin
-							closed_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*2;
+							closed_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*3;
 							color <= memory_closed[closed_address];
 						end
 					end

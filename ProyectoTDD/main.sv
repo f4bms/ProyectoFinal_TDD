@@ -19,13 +19,15 @@ clock_div clock_divider(
 logic [23:0] rgb_color;
 
 logic [1:0] correct_door = 2'b01;
-logic [1:0] p1_lives = 2'b01;
+logic [1:0] p1_lives = 2'b10;
 logic [1:0] p2_lives = 2'b11;
 logic time_up = 1;
 				 
 screen_drawer screen( 
 	.clk(VGA_CLK),
-	.correct_door(correct_door),
+	.p1_lives(SW[8:7]),
+	.p2_lives(SW[6:5]),
+	.correct_door(SW[4:3]),
 	.time_up(time_up),
 	.rgb_color(rgb_color));
 
