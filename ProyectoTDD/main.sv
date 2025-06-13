@@ -25,9 +25,11 @@ logic time_up = 1;
 				 
 screen_drawer screen( 
 	.clk(VGA_CLK),
-	.p1_lives(SW[8:7]),
-	.p2_lives(SW[6:5]),
+	.p1_lives(p1_lives),
+	.p2_lives(p2_lives),
 	.correct_door(SW[4:3]),
+	.player_1_pos(SW[8:7]),
+	.player_2_pos(SW[6:5]),
 	.time_up(time_up),
 	.rgb_color(rgb_color));
 

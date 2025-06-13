@@ -1,6 +1,6 @@
 module screen_drawer(
 	input  logic clk,
-	input  logic [1:0] correct_door, p1_lives, p2_lives,
+	input  logic [1:0] correct_door, p1_lives, p2_lives, player_1_pos, player_2_pos,
 	input  logic time_up,
 	output logic [23:0] rgb_color
 );
@@ -36,11 +36,22 @@ parameter heart_offset_y = 100;
 logic [(2**$clog2(HEART_WIDTH*HEART_HEIGHT))-1:0] heart_address;
 logic [3:0] memory_heart [0:439];
 
+parameter PLAYER_WIDTH = 24;
+parameter PLAYER_HEIGHT = 30;
+parameter p1_offset_x = 256;
+parameter p2_offset_x = 312;
+parameter player_offset_y = 320;
+logic [(2**$clog2(PLAYER_WIDTH*PLAYER_HEIGHT))-1:0] p1_address;
+logic [(2**$clog2(PLAYER_WIDTH*PLAYER_HEIGHT))-1:0] p2_address;		
+logic [3:0] memory_player_1 [0:719];
+logic [3:0] memory_player_2 [0:719];
 
 sprites sprites(
 	.door_open(memory_open),
 	.door_closed(memory_closed),
-	.heart(memory_heart)
+	.heart(memory_heart),
+	.player_1(memory_player_1),
+	.player_2(memory_player_2)
 );
 
 logic [3:0] color;
@@ -52,7 +63,7 @@ color_decoder decoder(
 
 always @ (posedge clk)
 		begin
-		   // lives  //////////////////////////////////////////////////////////////////////////
+		   // Lives  ///////////////////////////////////////////////////////////////////////
 			if(y > heart_offset_y && y <= 119) begin
 				if(x >= hori_back && x < heart_offset_x || x >= 688)
 					color <= 4'b1110;
@@ -174,6 +185,79 @@ always @ (posedge clk)
 					else
 						color <= 4'b1110;
 				end
+			// Players //////////////////////////////////////////////////////////////////////
+			else if(y > player_offset_y && y <= 349) begin
+				if(x >= p1_offset_x && x < 280) begin
+					if(player_1_pos == 2'b00) begin
+						p1_address <= ((y - player_offset_y) * (PLAYER_WIDTH)) + (x - p1_offset_x);
+						color <= memory_player_1[p1_address];
+					end
+					else 
+						color <= 4'b1110;
+				end
+				else if(x >= p2_offset_x && x < 336) begin
+					if(player_2_pos == 2'b00) begin
+						p2_address <= ((y - player_offset_y) * (PLAYER_WIDTH)) + (x - p2_offset_x);
+						color <= memory_player_2[p2_address];
+					end
+					else 
+						color <= 4'b1110;
+				end
+				//-------------------------------------------------------
+				else if(x >= 368 && x < 392) begin
+					if(player_1_pos == 2'b01) begin
+						p1_address <= ((y - player_offset_y) * (PLAYER_WIDTH)) + (x - p1_offset_x - DOOR_WIDTH) - PLAYER_WIDTH;
+						color <= memory_player_1[p1_address];
+					end
+					else 
+						color <= 4'b1110;
+				end
+				else if(x >= 424 && x < 448) begin
+					if(player_2_pos == 2'b01) begin
+						p2_address <= ((y - player_offset_y) * (PLAYER_WIDTH)) + (x - p2_offset_x - DOOR_WIDTH) - PLAYER_WIDTH;
+						color <= memory_player_2[p2_address];
+					end
+					else 
+						color <= 4'b1110;
+				end
+				//-------------------------------------------------------
+				else if(x >= 480 && x < 504) begin
+					if(player_1_pos == 2'b10) begin
+						p1_address <= ((y - player_offset_y+2) * (PLAYER_WIDTH)) + (x - p1_offset_x - DOOR_WIDTH*2) - PLAYER_WIDTH*2;
+						color <= memory_player_1[p1_address];
+					end
+					else 
+						color <= 4'b1110;
+				end
+				else if(x >= 536 && x < 560) begin
+					if(player_2_pos == 2'b10) begin
+						p2_address <= ((y - player_offset_y+2) * (PLAYER_WIDTH)) + (x - p2_offset_x - DOOR_WIDTH*2) - PLAYER_WIDTH*2;
+						color <= memory_player_2[p2_address];
+					end
+					else 
+						color <= 4'b1110;
+				end
+				//-------------------------------------------------------
+				else if(x >= 592 && x < 616) begin
+					if(player_1_pos == 2'b11) begin
+						p1_address <= ((y - player_offset_y+2) * (PLAYER_WIDTH)) + (x - p1_offset_x - DOOR_WIDTH*3) - PLAYER_WIDTH*3;
+						color <= memory_player_1[p1_address];
+					end
+					else 
+						color <= 4'b1110;
+				end
+				else if(x >= 648 && x < 672) begin
+					if(player_2_pos == 2'b11) begin
+						p2_address <= ((y - player_offset_y+2) * (PLAYER_WIDTH)) + (x - p2_offset_x - DOOR_WIDTH*3) - PLAYER_WIDTH*3;
+						color <= memory_player_2[p2_address];
+					end
+					else 
+						color <= 4'b1110;
+				end
+				//-------------------------------------------------------
+				else
+					color <= 4'b1110;
+			end
 			else
 				color <= 4'b1110;
 		end

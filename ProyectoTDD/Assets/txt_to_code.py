@@ -19,26 +19,28 @@ replace_cinder = "4'b0110,\n"
 black = "#000909,"
 replace_black = "4'b0111,\n"
 rust = "#8f4017,"
-replace_rust = "4'b1000,\n"
+replace_rust = "4'b1001,\n"
 mahogany = "#702a00,"
 replace_mahogany = "4'b1001,\n"
 pumpkin = "#d56e45,"
 replace_pumpkin = "4'b1010,\n"
 caramel = "#bf6540,"
 replace_caramel = "4'b1011,\n"
-daisy = "#f9d080,"
-replace_daisy = "4'b1100,\n"
+pink = "#ff6b97,"
+replace_pink = "4'b1100,\n"
 orange = "#fb8347,"
 replace_orange = "4'b1101,\n"
 indigo = "#2f2a4b,"
 replace_indigo = "4'b1110,\n"
 red = "#e01f1f,"
 replace_red = "4'b1111,\n"
+green = "#8fde5d,"
+replace_green = "4'b1000,\n"
 
 
 # Opening our text file in read only
 # mode using the open() function
-with open(r'heart.txt', 'r') as file:
+with open(r'player_2.txt', 'r') as file:
 
     # Reading the content of the file
     # using the read() function and storing
@@ -696,7 +698,6 @@ with open(r'heart.txt', 'r') as file:
     data = data.replace("#bc6742,", replace_caramel)
     data = data.replace("#bc6742,", replace_caramel)
     data = data.replace("#bc6742,", replace_caramel)
-    data = data.replace(daisy, replace_daisy)
     data = data.replace(orange, replace_orange)
     data = data.replace("#fd8247,", replace_orange)
     data = data.replace("#fc8448,", replace_orange)
@@ -743,13 +744,15 @@ with open(r'heart.txt', 'r') as file:
     data = data.replace("#ae3232,", replace_red)
     data = data.replace("#e01f1f,", replace_red)
     data = data.replace("#ae3232,", replace_red)
+    data = data.replace(pink, replace_pink)
+    data = data.replace(green, replace_green)
     #data = re.sub(r"#([0-9a-fA-F]{6}),", replace_black, data)
       
           
 
 # Opening our text file in write only
 # mode to write the replaced content
-with open(r'heart_sprite.txt', 'w') as file:
+with open(r'player_2_sprite.txt', 'w') as file:
 
     # Writing the replaced data in our
     # text file
