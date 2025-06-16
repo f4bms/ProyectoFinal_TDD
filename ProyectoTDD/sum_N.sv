@@ -12,8 +12,8 @@ module sum_N #(
 	logic [m-1:0] c;
 
 	always_comb begin
-		
-//esto es para el half adder
+		c = '0; // Initialize carry vector to zero to avoid X propagation
+
 			
 		c[0] = a[0] & b[0]; 
 		y[0] = a[0] ^ b[0];

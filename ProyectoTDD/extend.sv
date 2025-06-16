@@ -8,7 +8,7 @@ module extend(
         case (ImmSrc)
             2'b00: ExtImm = {24'b0, Instruction[7:0]}; 
             2'b01: ExtImm = {20'b0, Instruction[11:0]}; 
-            2'b10: ExtImm = {6'b0, Instruction[23:0]} << 2;
+            2'b10: ExtImm = {{6{Instruction[23]}}, Instruction[23:0], 2'b00};
             2'b11: ExtImm = 32'b0; // No se usa, pero se define para completar el caso
             default: ExtImm = 32'b0; // Manejo de caso por defecto
         endcase

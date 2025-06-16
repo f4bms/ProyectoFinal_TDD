@@ -7,18 +7,20 @@ module InstMemory(input logic clk, reset,
 
     // Instrciones de inicialización, PRUEBAS
     initial begin
-        instructionMemory[0] = 32'hE3A00001; // MOV R0, #1
-        instructionMemory[1] = 32'hE3A01002; // MOV R1, #2
-        instructionMemory[2] = 32'hE0800001; // ADD R0, R0, R1
+        instructionMemory[0] = 32'hE3A00003; // MOV R0, #3
+        instructionMemory[1] = 32'hE3500000; // CMP R0, #0
+        instructionMemory[2] = 32'h0A000002; // BEQ end (PC + 8 + 4*2 = PC + 16)
+        instructionMemory[3] = 32'hE2400001; // SUB R0, R0, #1
+        instructionMemory[4] = 32'hEAFFFFFC; // B loop (salta 3 instrucciones hacia atrás)
+        instructionMemory[5] = 32'hE3A0102A; // end: MOV R1, #42
     end
 
+
     // Actualizar la instrucción en cada ciclo de reloj
-    always_ff @(posedge clk or posedge reset) begin
-        if (reset) begin
-            Instruction <= 32'h00000000; 
-        end else begin
-            Instruction <= instructionMemory[PC >> 2]; // Dividir por 4 para obtener la dirección de palabra
-        end
+    always_comb begin
+
+        Instruction = instructionMemory[PC[31:2]];
+        
     end
 
 endmodule

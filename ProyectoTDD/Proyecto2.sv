@@ -1,9 +1,21 @@
 module Proyecto2( // No es proyecto 1?
     input logic clk, reset
+    ,output logic [15:0][31:0] leds_registers  // Salida para los LEDs de los registros
+    , output logic [31:0] instr // Contador de Programa
+    , output logic [31:0] PC_led // Contador de Programa
+    , output logic [31:0] ALUres
+    ,output logic [1:0] F32
 );
-
 logic [31:0] Instruction; // Instrucción de 32 bits
 logic [31:0] PC; // Contador de Programa
+
+assign instr = Instruction; // Asignar el PC a la salida instr
+assign PC_led = PC; // Asignar el PC a la salida PC_led
+
+logic [31:0] tempMem = {default:32'd0};
+
+
+
 
 // Memoria de instrucciones
 InstMemory inst_mem (
@@ -28,6 +40,8 @@ DataMemory data_mem (
     .RD(ReadData) // No se usa en este momento
 );
 
+
+
 // Procesador ARMv4
 ProcesadorARMv4 proc (
     .clk(clk),
@@ -37,7 +51,10 @@ ProcesadorARMv4 proc (
     .WriteDataMem(WriteDataMem),
     .AddressDataMem(AddressDataMem),
     .WriteEnableMem(WriteEnableMem), // No se escribe en memoria en este momento
-    .ReadData(ReadData)
+    .ReadData(ReadData),
+    .leds_registers(leds_registers) // Salida para los LEDs de los registros
+    , .ALUres(ALUres) // Salida para el resultado de la ALU
+    , .F32(F32)
 );
 
 
