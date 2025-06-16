@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proyecto2
-Thu Jun 12 18:45:50 2025
+Mon Jun 16 10:13:35 2025
 Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 
 
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun 12 18:45:50 2025       ;
+; Analysis & Synthesis Status     ; Successful - Mon Jun 16 10:13:35 2025       ;
 ; Quartus Prime Version           ; 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
 ; Revision Name                   ; Proyecto2                                   ;
 ; Top-level Entity Name           ; main                                        ;
@@ -208,14 +208,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------+
 ; Resource                                    ; Usage                                  ;
 +---------------------------------------------+----------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2302                                   ;
+; Estimate of Logic utilization (ALMs needed) ; 2305                                   ;
 ;                                             ;                                        ;
-; Combinational ALUT usage for logic          ; 2890                                   ;
-;     -- 7 input functions                    ; 296                                    ;
-;     -- 6 input functions                    ; 1415                                   ;
-;     -- 5 input functions                    ; 413                                    ;
-;     -- 4 input functions                    ; 375                                    ;
-;     -- <=3 input functions                  ; 391                                    ;
+; Combinational ALUT usage for logic          ; 2896                                   ;
+;     -- 7 input functions                    ; 295                                    ;
+;     -- 6 input functions                    ; 1417                                   ;
+;     -- 5 input functions                    ; 415                                    ;
+;     -- 4 input functions                    ; 379                                    ;
+;     -- <=3 input functions                  ; 390                                    ;
 ;                                             ;                                        ;
 ; Dedicated logic registers                   ; 106                                    ;
 ;                                             ;                                        ;
@@ -225,7 +225,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                        ;
 ; Maximum fan-out node                        ; screen_drawer:screen|closed_address[4] ;
 ; Maximum fan-out                             ; 798                                    ;
-; Total fan-out                               ; 15713                                  ;
+; Total fan-out                               ; 15742                                  ;
 ; Average fan-out                             ; 5.09                                   ;
 +---------------------------------------------+----------------------------------------+
 
@@ -235,9 +235,9 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name          ; Library Name ;
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+----------------------+--------------+
-; |main                                   ; 2890 (0)            ; 106 (0)                   ; 0                 ; 5          ; 44   ; 0            ; |main                                                   ; main                 ; work         ;
+; |main                                   ; 2896 (0)            ; 106 (0)                   ; 0                 ; 5          ; 44   ; 0            ; |main                                                   ; main                 ; work         ;
 ;    |clock_div:clock_divider|            ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |main|clock_div:clock_divider                           ; clock_div            ; work         ;
-;    |screen_drawer:screen|               ; 2856 (2808)         ; 80 (60)                   ; 0                 ; 5          ; 0    ; 0            ; |main|screen_drawer:screen                              ; screen_drawer        ; work         ;
+;    |screen_drawer:screen|               ; 2862 (2814)         ; 80 (60)                   ; 0                 ; 5          ; 0    ; 0            ; |main|screen_drawer:screen                              ; screen_drawer        ; work         ;
 ;       |color_decoder:decoder|           ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|screen_drawer:screen|color_decoder:decoder        ; color_decoder        ; work         ;
 ;       |counter:counter_x|               ; 12 (12)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |main|screen_drawer:screen|counter:counter_x            ; counter              ; work         ;
 ;       |counter:counter_y|               ; 12 (12)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |main|screen_drawer:screen|counter:counter_y            ; counter              ; work         ;
@@ -435,7 +435,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 10                          ;
 ;     plain             ; 5                           ;
-; arriav_lcell_comb     ; 2914                        ;
+; arriav_lcell_comb     ; 2920                        ;
 ;     arith             ; 129                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 74                          ;
@@ -443,15 +443,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 6                           ;
 ;         4 data inputs ; 5                           ;
 ;         5 data inputs ; 7                           ;
-;     extend            ; 296                         ;
-;         7 data inputs ; 296                         ;
-;     normal            ; 2331                        ;
+;     extend            ; 295                         ;
+;         7 data inputs ; 295                         ;
+;     normal            ; 2338                        ;
 ;         1 data inputs ; 25                          ;
-;         2 data inputs ; 60                          ;
+;         2 data inputs ; 59                          ;
 ;         3 data inputs ; 87                          ;
-;         4 data inputs ; 338                         ;
-;         5 data inputs ; 406                         ;
-;         6 data inputs ; 1415                        ;
+;         4 data inputs ; 342                         ;
+;         5 data inputs ; 408                         ;
+;         6 data inputs ; 1417                        ;
 ;     shared            ; 158                         ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 85                          ;
@@ -461,7 +461,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 44                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 6.05                        ;
+; Average LUT depth     ; 6.10                        ;
 +-----------------------+-----------------------------+
 
 
@@ -470,7 +470,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -480,7 +480,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
-    Info: Processing started: Thu Jun 12 18:45:17 2025
+    Info: Processing started: Mon Jun 16 10:12:59 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proyecto2 -c Proyecto2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -512,17 +512,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file debounc
     Info (12023): Found entity 1: debounce File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/debounce.sv Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at screen_drawer.sv(14): created implicit net for "reset" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 14
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at main.sv(21): object "correct_door" assigned a value but never read File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 21
+Warning (10036): Verilog HDL or VHDL warning at main.sv(21): object "correct_door_1" assigned a value but never read File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 21
+Warning (10036): Verilog HDL or VHDL warning at main.sv(22): object "correct_door_2" assigned a value but never read File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 22
 Info (12128): Elaborating entity "clock_div" for hierarchy "clock_div:clock_divider" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 17
 Warning (10230): Verilog HDL assignment warning at clock_div.sv(5): truncated value with size 32 to match size of target (2) File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/clock_div.sv Line: 5
 Warning (10230): Verilog HDL assignment warning at clock_div.sv(9): truncated value with size 32 to match size of target (2) File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/clock_div.sv Line: 9
-Info (12128): Elaborating entity "screen_drawer" for hierarchy "screen_drawer:screen" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 34
+Info (12128): Elaborating entity "screen_drawer" for hierarchy "screen_drawer:screen" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 37
 Warning (10030): Net "reset" at screen_drawer.sv(14) has no driver or initial value, using a default initial value '0' File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 14
 Info (12128): Elaborating entity "counter" for hierarchy "screen_drawer:screen|counter:counter_x" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 14
 Warning (10230): Verilog HDL assignment warning at counter.sv(18): truncated value with size 32 to match size of target (10) File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/counter.sv Line: 18
 Info (12128): Elaborating entity "sprites" for hierarchy "screen_drawer:screen|sprites:sprites" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 55
 Info (12128): Elaborating entity "color_decoder" for hierarchy "screen_drawer:screen|color_decoder:decoder" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/screen_drawer.sv Line: 62
-Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:driver" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 46
+Info (12128): Elaborating entity "vga_driver" for hierarchy "vga_driver:driver" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 49
 Info (12128): Elaborating entity "video_sync_generator" for hierarchy "vga_driver:driver|video_sync_generator:video_sync" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/vga_driver.sv Line: 19
 Warning (10230): Verilog HDL assignment warning at video_sync_generator.sv(38): truncated value with size 32 to match size of target (10) File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/video_sync_generator.sv Line: 38
 Warning (10230): Verilog HDL assignment warning at video_sync_generator.sv(41): truncated value with size 32 to match size of target (11) File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/VGA/video_sync_generator.sv Line: 41
@@ -531,25 +532,23 @@ Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/output_files/Proyecto2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 3
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 3
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 3
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 3
     Warning (15610): No output dependent on input pin "serial_in" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 4
     Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 5
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 5
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/main.sv Line: 5
-Info (21057): Implemented 2952 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2958 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 2903 logic cells
+    Info (21061): Implemented 2909 logic cells
     Info (21062): Implemented 5 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 6073 megabytes
-    Info: Processing ended: Thu Jun 12 18:45:50 2025
-    Info: Elapsed time: 00:00:33
-    Info: Total CPU time (on all processors): 00:00:41
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 6075 megabytes
+    Info: Processing ended: Mon Jun 16 10:13:35 2025
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:43
 
 
 +------------------------------------------+

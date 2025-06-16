@@ -1,6 +1,6 @@
 module screen_drawer(
 	input  logic clk,
-	input  logic [1:0] correct_door, p1_lives, p2_lives, player_1_pos, player_2_pos,
+	input  logic [1:0] correct_door_1, correct_door_2, p1_lives, p2_lives, player_1_pos, player_2_pos,
 	input  logic time_up,
 	output logic [23:0] rgb_color
 );
@@ -143,7 +143,7 @@ always @ (posedge clk)
 			else if(y > offset_y && y <= 317)
 				begin
 					if(x >= offset_x && x < 352) begin
-						if(correct_door == 2'b00 && time_up) begin
+						if((correct_door_1 == 2'b00 || correct_door_2 == 2'b00) && time_up) begin
 							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x);
 							color <= memory_open[open_address];
 						end
@@ -153,7 +153,7 @@ always @ (posedge clk)
 						end
 					end
 					else if(x >= 352 && x < 464) begin
-						if(correct_door == 2'b01 && time_up) begin
+						if((correct_door_1 == 2'b01 || correct_door_2 == 2'b01)  && time_up) begin
 							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH;
 							color <= memory_open[open_address];
 						end
@@ -163,7 +163,7 @@ always @ (posedge clk)
 						end
 					end
 					else if(x >= 464 && x < 576) begin
-						if(correct_door == 2'b10 && time_up) begin
+						if((correct_door_1 == 2'b10 || correct_door_2 == 2'b10)  && time_up) begin
 							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*2;
 							color <= memory_open[open_address];
 						end
@@ -173,7 +173,7 @@ always @ (posedge clk)
 						end
 					end
 					else if(x >= 576 && x < 688) begin
-						if(correct_door == 2'b11 && time_up) begin
+						if((correct_door_1 == 2'b11 || correct_door_2 == 2'b11)  && time_up) begin
 							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*3;
 							color <= memory_open[open_address];
 						end
