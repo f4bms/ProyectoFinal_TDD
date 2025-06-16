@@ -6,10 +6,6 @@ module main(
 
 	 output logic [ 6: 0]   HEX0,
 	 output logic [ 6: 0]   HEX1,
-	 output logic [ 6: 0]   HEX2,
-	 output logic [ 6: 0]   HEX3,
-	 output logic [ 6: 0]   HEX4,
-	 output logic [ 6: 0]   HEX5,
 
     output logic VGA_CLK,
     output logic VGA_HS,
@@ -70,6 +66,8 @@ screen_drawer screen(
 	.player_1_pos(SW[8:7]),
 	.player_2_pos(SW[6:5]),
 	.resume(resume),
+	.time_up(time_up),
+	.reset(SW[9]),
 	.rgb_color(rgb_color));
 
 vga_driver driver(
@@ -85,8 +83,10 @@ vga_driver driver(
 );
 
 always@(posedge VGA_CLK) begin
-	if(tics == 2'b1010)
-		time_up <= !time_up;
+	if(tics == 4'b1010) begin
+		time_up <= 1;
+		enable <= 0;
+	end
 	if(resume)
 		time_up <= 0;
 	
