@@ -3,10 +3,9 @@ module main(
     input  logic [3:0] KEY,
 	 input  logic serial_in,
 	 input  logic [ 9: 0] SW,
-
 	 output logic [ 6: 0]   HEX0,
 	 output logic [ 6: 0]   HEX1,
-
+	 output logic [9:0] LEDR,
     output logic VGA_CLK,
     output logic VGA_HS,
     output logic VGA_VS,
@@ -26,12 +25,10 @@ logic [1:0] correct_door_2 = 2'b00;
 logic [1:0] p1_lives = 2'b10;
 logic [1:0] p2_lives = 2'b11;
 logic time_up = 0;
-logic [23:0] sec_1 = 2'b101111101011110000100000;
-logic [27:0] sec_10 = 2'b1110111001101011001010000000;
-logic [28:0] sec_11 = 2'b10000011001000010101011000000;
-logic resume = 0;
-//counter #(28) counter_play(.clk(VGA_CLK), .enable(1), .reset(resume), .max(sec_10), .done(time_up), .q());
-counter #(24) counter_pause(.clk(VGA_CLK), .enable(time_up), .reset(reset), .max(sec_1), .done(resume), .q());
+logic resume;
+
+logic [24:0] sec_1 = 25'd25_000_000;
+counter #(25) counter_pause(.clk(VGA_CLK), .enable(time_up), .reset(reset), .max(sec_1), .done(resume), .q());
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SEVEN SEGMENT TIMER
@@ -52,7 +49,7 @@ assign seg_1 = bcd_time[11:8];
 
 timer timer_count (
 	.clk(VGA_CLK), 
-	.reset(SW[9]),
+	.reset(resume),
 	.enable(enable),
 	.seconds(tics)
 );   
@@ -83,12 +80,18 @@ vga_driver driver(
 );
 
 always@(posedge VGA_CLK) begin
-	if(tics == 4'b1010) begin
+	if(tics >= 4'b1010) begin
 		time_up <= 1;
 		enable <= 0;
 	end
-	if(resume)
+	
+	if(resume) begin
 		time_up <= 0;
+		enable <= 1;
+	end
+	
+	LEDR[0] <= time_up;
+	LEDR[1] <= resume;
 	
 end
 
