@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Proyecto2
-Mon Jun 16 21:02:54 2025
+Mon Jun 16 22:05:16 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -15,17 +15,19 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for ram_vid:mi_ram|altsyncram:altsyncram_component|altsyncram_sen2:auto_generated
- 13. Parameter Settings for User Entity Instance: ram_vid:mi_ram|altsyncram:altsyncram_component
- 14. Parameter Settings for User Entity Instance: readMUX:mux_u
- 15. altsyncram Parameter Settings by Entity Instance
- 16. Port Connectivity Checks: "ram_vid:mi_ram"
- 17. Port Connectivity Checks: "Deco:deco_inst"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for ram_vid:mi_ram|altsyncram:altsyncram_component|altsyncram_sen2:auto_generated
+ 15. Parameter Settings for User Entity Instance: ram_vid:mi_ram|altsyncram:altsyncram_component
+ 16. Parameter Settings for User Entity Instance: readMUX:mux_u
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "ram_vid:mi_ram"
+ 19. Port Connectivity Checks: "Deco:deco_inst"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -52,14 +54,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun 16 21:02:54 2025          ;
+; Analysis & Synthesis Status     ; Successful - Mon Jun 16 22:05:16 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; Proyecto2                                      ;
 ; Top-level Entity Name           ; DataMemory                                     ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 0                                              ;
-; Total pins                      ; 99                                             ;
+; Total registers                 ; 8                                              ;
+; Total pins                      ; 107                                            ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 256                                            ;
 ; Total DSP Blocks                ; 0                                              ;
@@ -184,6 +186,7 @@ https://fpgasoftware.intel.com/eula.
 ; DataMemory.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv                         ;         ;
 ; Deco.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/Deco.sv                               ;         ;
 ; readMUX.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/readMUX.sv                            ;         ;
+; RegBotones.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/RegBotones.sv                         ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
@@ -197,33 +200,33 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                           ;
-+---------------------------------------------+-------------------------+
-; Resource                                    ; Usage                   ;
-+---------------------------------------------+-------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 37                      ;
-;                                             ;                         ;
-; Combinational ALUT usage for logic          ; 37                      ;
-;     -- 7 input functions                    ; 0                       ;
-;     -- 6 input functions                    ; 36                      ;
-;     -- 5 input functions                    ; 0                       ;
-;     -- 4 input functions                    ; 0                       ;
-;     -- <=3 input functions                  ; 1                       ;
-;                                             ;                         ;
-; Dedicated logic registers                   ; 0                       ;
-;                                             ;                         ;
-; I/O pins                                    ; 99                      ;
-; Total MLAB memory bits                      ; 0                       ;
-; Total block memory bits                     ; 256                     ;
-;                                             ;                         ;
-; Total DSP Blocks                            ; 0                       ;
-;                                             ;                         ;
-; Maximum fan-out node                        ; Deco:deco_inst|Equal2~0 ;
-; Maximum fan-out                             ; 33                      ;
-; Total fan-out                               ; 571                     ;
-; Average fan-out                             ; 2.14                    ;
-+---------------------------------------------+-------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 44        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 47        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 40        ;
+;     -- 5 input functions                    ; 2         ;
+;     -- 4 input functions                    ; 2         ;
+;     -- <=3 input functions                  ; 3         ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 8         ;
+;                                             ;           ;
+; I/O pins                                    ; 107       ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 256       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 40        ;
+; Total fan-out                               ; 657       ;
+; Average fan-out                             ; 2.18      ;
++---------------------------------------------+-----------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -231,12 +234,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+-----------------+--------------+
-; |DataMemory                               ; 37 (1)              ; 0 (0)                     ; 256               ; 0          ; 99   ; 0            ; |DataMemory                                                                               ; DataMemory      ; work         ;
-;    |Deco:deco_inst|                       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataMemory|Deco:deco_inst                                                                ; Deco            ; work         ;
+; |DataMemory                               ; 47 (1)              ; 8 (0)                     ; 256               ; 0          ; 107  ; 0            ; |DataMemory                                                                               ; DataMemory      ; work         ;
+;    |Deco:deco_inst|                       ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataMemory|Deco:deco_inst                                                                ; Deco            ; work         ;
+;    |RegBotones:reg_botones1|              ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |DataMemory|RegBotones:reg_botones1                                                       ; RegBotones      ; work         ;
+;    |RegBotones:reg_botones2|              ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |DataMemory|RegBotones:reg_botones2                                                       ; RegBotones      ; work         ;
 ;    |ram_vid:mi_ram|                       ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |DataMemory|ram_vid:mi_ram                                                                ; ram_vid         ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |DataMemory|ram_vid:mi_ram|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_sen2:auto_generated| ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |DataMemory|ram_vid:mi_ram|altsyncram:altsyncram_component|altsyncram_sen2:auto_generated ; altsyncram_sen2 ; work         ;
-;    |readMUX:mux_u|                        ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataMemory|readMUX:mux_u                                                                 ; readMUX         ; work         ;
+;    |readMUX:mux_u|                        ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataMemory|readMUX:mux_u                                                                 ; readMUX         ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -259,17 +264,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------+----------------------------+
 
 
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; RegBotones:reg_botones2|data_out[4..31] ; Stuck at GND due to stuck port data_in ;
+; RegBotones:reg_botones1|data_out[4..31] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 56  ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                               ;
++--------------------------------------+---------------------------+----------------------------------------+
+; Register name                        ; Reason for Removal        ; Registers Removed due to This Register ;
++--------------------------------------+---------------------------+----------------------------------------+
+; RegBotones:reg_botones2|data_out[20] ; Stuck at GND              ; RegBotones:reg_botones1|data_out[4]    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; RegBotones:reg_botones2|data_out[18] ; Stuck at GND              ; RegBotones:reg_botones1|data_out[5]    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; RegBotones:reg_botones2|data_out[16] ; Stuck at GND              ; RegBotones:reg_botones1|data_out[6]    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; RegBotones:reg_botones2|data_out[14] ; Stuck at GND              ; RegBotones:reg_botones1|data_out[7]    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; RegBotones:reg_botones2|data_out[12] ; Stuck at GND              ; RegBotones:reg_botones1|data_out[8]    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; RegBotones:reg_botones2|data_out[10] ; Stuck at GND              ; RegBotones:reg_botones1|data_out[9]    ;
+;                                      ; due to stuck port data_in ;                                        ;
+; RegBotones:reg_botones2|data_out[8]  ; Stuck at GND              ; RegBotones:reg_botones1|data_out[10]   ;
+;                                      ; due to stuck port data_in ;                                        ;
+; RegBotones:reg_botones2|data_out[6]  ; Stuck at GND              ; RegBotones:reg_botones1|data_out[11]   ;
+;                                      ; due to stuck port data_in ;                                        ;
+; RegBotones:reg_botones2|data_out[4]  ; Stuck at GND              ; RegBotones:reg_botones1|data_out[12]   ;
+;                                      ; due to stuck port data_in ;                                        ;
++--------------------------------------+---------------------------+----------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 8     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -279,7 +321,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DataMemory|Deco:deco_inst|rdsel[0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DataMemory|readMUX:mux_u|Mux29     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DataMemory|Deco:deco_inst|rdsel[1] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
@@ -403,8 +446,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; wem  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; we1  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; we2  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -413,15 +454,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 37                          ;
-;     normal            ; 37                          ;
+; arriav_ff             ; 8                           ;
+;     ENA CLR           ; 8                           ;
+; arriav_lcell_comb     ; 47                          ;
+;     normal            ; 47                          ;
 ;         0 data inputs ; 1                           ;
-;         6 data inputs ; 36                          ;
-; boundary_port         ; 99                          ;
+;         2 data inputs ; 2                           ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 2                           ;
+;         6 data inputs ; 40                          ;
+; boundary_port         ; 107                         ;
 ; stratixv_ram_block    ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.14                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.36                        ;
 +-----------------------+-----------------------------+
 
 
@@ -440,7 +486,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Jun 16 21:02:46 2025
+    Info: Processing started: Mon Jun 16 22:05:05 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proyecto2 -c Proyecto2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -488,11 +534,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file conditi
     Info (12023): Found entity 1: ConditionCheck File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/ConditionCheck.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file readmux.sv
     Info (12023): Found entity 1: readMUX File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/readMUX.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at DataMemory.sv(33): created implicit net for "addr_b" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 33
-Warning (10236): Verilog HDL Implicit Net warning at DataMemory.sv(40): created implicit net for "q_b" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file regbotones.sv
+    Info (12023): Found entity 1: RegBotones File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/RegBotones.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at DataMemory.sv(37): created implicit net for "addr_b" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at DataMemory.sv(44): created implicit net for "q_b" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 44
 Info (12127): Elaborating entity "DataMemory" for the top level hierarchy
-Info (12128): Elaborating entity "Deco" for hierarchy "Deco:deco_inst" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 23
-Info (12128): Elaborating entity "ram_vid" for hierarchy "ram_vid:mi_ram" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 41
+Info (12128): Elaborating entity "Deco" for hierarchy "Deco:deco_inst" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 27
+Info (12128): Elaborating entity "ram_vid" for hierarchy "ram_vid:mi_ram" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 45
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ram_vid:mi_ram|altsyncram:altsyncram_component" File: C:/Vid_ram/ram_vid.v Line: 98
 Info (12130): Elaborated megafunction instantiation "ram_vid:mi_ram|altsyncram:altsyncram_component" File: C:/Vid_ram/ram_vid.v Line: 98
 Info (12133): Instantiated megafunction "ram_vid:mi_ram|altsyncram:altsyncram_component" with the following parameter: File: C:/Vid_ram/ram_vid.v Line: 98
@@ -525,13 +573,13 @@ Info (12133): Instantiated megafunction "ram_vid:mi_ram|altsyncram:altsyncram_co
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_sen2.tdf
     Info (12023): Found entity 1: altsyncram_sen2 File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/db/altsyncram_sen2.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_sen2" for hierarchy "ram_vid:mi_ram|altsyncram:altsyncram_component|altsyncram_sen2:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "readMUX" for hierarchy "readMUX:mux_u" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 50
+Info (12128): Elaborating entity "readMUX" for hierarchy "readMUX:mux_u" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 54
+Info (12128): Elaborating entity "RegBotones" for hierarchy "RegBotones:reg_botones1" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 62
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 11 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "reset" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 3
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "A[22]" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 4
     Warning (15610): No output dependent on input pin "A[23]" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 4
     Warning (15610): No output dependent on input pin "A[24]" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 4
@@ -542,15 +590,15 @@ Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "A[29]" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 4
     Warning (15610): No output dependent on input pin "A[30]" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 4
     Warning (15610): No output dependent on input pin "A[31]" File: C:/MPointer/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 4
-Info (21057): Implemented 168 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 67 input pins
+Info (21057): Implemented 194 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 75 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 37 logic cells
+    Info (21061): Implemented 55 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4857 megabytes
-    Info: Processing ended: Mon Jun 16 21:02:54 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:16
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4873 megabytes
+    Info: Processing ended: Mon Jun 16 22:05:16 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
 
 

@@ -1,13 +1,13 @@
-Fitter Status : Successful - Mon Jun 16 21:04:09 2025
+Fitter Status : Successful - Mon Jun 16 22:07:24 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : Proyecto2
 Top-level Entity Name : DataMemory
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 21 / 56,480 ( < 1 % )
-Total registers : 0
-Total pins : 99 / 268 ( 37 % )
+Logic utilization (in ALMs) : 30 / 56,480 ( < 1 % )
+Total registers : 8
+Total pins : 107 / 268 ( 40 % )
 Total virtual pins : 0
 Total block memory bits : 256 / 7,024,640 ( < 1 % )
 Total RAM Blocks : 2 / 686 ( < 1 % )

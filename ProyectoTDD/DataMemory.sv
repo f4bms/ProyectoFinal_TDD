@@ -4,6 +4,10 @@ module DataMemory(
     input logic [31:0] A, // Dirección de memoria
     input logic [31:0] WD, // Datos a escribir
     input logic WE, // Señal de escritura
+	 input logic [3:0]   botones1,
+	 input logic [3:0]   botones2,
+
+	 
     output logic [31:0] RD // Datos leídos
 );
 
@@ -40,14 +44,31 @@ ram_vid mi_ram (
         .q_b(q_b) //vga
     );
 	 
-readMUX mux_u (
-        .rdsel    (rdsel),
-        .rdata0   (RDataRAM),
-        .rdata1   (RDataIO1),
-        .rdata2   (RDataIO2),
-        .rdata3   (RDataIO3), //va conectado a la salida del 
-        .readData (RD) //siempre va conectado al proce
+readMUX mux_u(
+	.rdsel(rdsel),
+	.rdata0(RDataRAM),
+	.rdata1(RDataIO1),
+	.rdata2(RDataIO2),
+	.rdata3(RDataIO3), //va conectado a la salida del 
+	.readData (RD) //siempre va conectado al proce
     );
+	 
+RegBotones reg_botones1 (
+	.clk(clk),
+	.reset(reset),
+	.botones(botones1),
+	.we(we2),
+	.data_out(RDataIO2)
+);
+
+RegBotones reg_botones2 (
+	.clk(clk),
+	.reset(reset),
+	.botones(botones2),
+	.we(we1),
+	.data_out(RDataIO1)
+);
+
 	 
 	 
 	 
