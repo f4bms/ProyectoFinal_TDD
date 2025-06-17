@@ -4,355 +4,199 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "RD[0]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[1]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[2]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[3]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[4]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[5]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[6]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[7]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[8]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[9]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[10]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[11]",
+					"name" : "LEDR[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[12]",
+					"name" : "LEDR[1]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[13]",
+					"name" : "VGA_CLK",
 					"strict" : false
 				},
 				{
-					"name" : "RD[14]",
+					"name" : "VGA_HS",
 					"strict" : false
 				},
 				{
-					"name" : "RD[15]",
+					"name" : "VGA_VS",
 					"strict" : false
 				},
 				{
-					"name" : "RD[16]",
+					"name" : "VGA_R[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[17]",
+					"name" : "VGA_R[1]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[18]",
+					"name" : "VGA_R[2]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[19]",
+					"name" : "VGA_R[3]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[20]",
+					"name" : "VGA_R[4]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[21]",
+					"name" : "VGA_R[5]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[22]",
+					"name" : "VGA_R[6]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[23]",
+					"name" : "VGA_R[7]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[24]",
+					"name" : "VGA_G[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[25]",
+					"name" : "VGA_G[1]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[26]",
+					"name" : "VGA_G[2]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[27]",
+					"name" : "VGA_G[3]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[28]",
+					"name" : "VGA_G[4]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[29]",
+					"name" : "VGA_G[5]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[30]",
+					"name" : "VGA_G[6]",
 					"strict" : false
 				},
 				{
-					"name" : "RD[31]",
+					"name" : "VGA_G[7]",
 					"strict" : false
 				},
 				{
-					"name" : "A[20]",
+					"name" : "VGA_B[0]",
 					"strict" : false
 				},
 				{
-					"name" : "A[21]",
+					"name" : "VGA_B[1]",
 					"strict" : false
 				},
 				{
-					"name" : "A[14]",
+					"name" : "VGA_B[2]",
 					"strict" : false
 				},
 				{
-					"name" : "A[15]",
+					"name" : "VGA_B[3]",
 					"strict" : false
 				},
 				{
-					"name" : "A[16]",
+					"name" : "VGA_B[4]",
 					"strict" : false
 				},
 				{
-					"name" : "A[17]",
+					"name" : "VGA_B[5]",
 					"strict" : false
 				},
 				{
-					"name" : "A[18]",
+					"name" : "VGA_B[6]",
 					"strict" : false
 				},
 				{
-					"name" : "A[19]",
+					"name" : "VGA_B[7]",
 					"strict" : false
 				},
 				{
-					"name" : "A[2]",
+					"name" : "VGA_BLANK_N",
 					"strict" : false
 				},
 				{
-					"name" : "A[3]",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "A[4]",
+					"name" : "SW[5]",
 					"strict" : false
 				},
 				{
-					"name" : "A[5]",
+					"name" : "SW[6]",
 					"strict" : false
 				},
 				{
-					"name" : "A[6]",
+					"name" : "SW[7]",
 					"strict" : false
 				},
 				{
-					"name" : "A[7]",
+					"name" : "SW[8]",
 					"strict" : false
 				},
 				{
-					"name" : "A[8]",
+					"name" : "SW[3]",
 					"strict" : false
 				},
 				{
-					"name" : "A[9]",
+					"name" : "SW[4]",
 					"strict" : false
 				},
 				{
-					"name" : "A[10]",
-					"strict" : false
-				},
-				{
-					"name" : "A[11]",
-					"strict" : false
-				},
-				{
-					"name" : "A[12]",
-					"strict" : false
-				},
-				{
-					"name" : "A[13]",
-					"strict" : false
-				},
-				{
-					"name" : "WE",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
-					"name" : "WD[0]",
-					"strict" : false
-				},
-				{
-					"name" : "A[0]",
-					"strict" : false
-				},
-				{
-					"name" : "A[1]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[1]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[2]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[3]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[4]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[5]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[6]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[7]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[8]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[9]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[10]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[11]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[12]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[13]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[14]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[15]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[16]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[17]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[18]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[19]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[20]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[21]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[22]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[23]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[24]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[25]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[26]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[27]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[28]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[29]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[30]",
-					"strict" : false
-				},
-				{
-					"name" : "WD[31]",
+					"name" : "reset",
 					"strict" : false
 				}
 			]

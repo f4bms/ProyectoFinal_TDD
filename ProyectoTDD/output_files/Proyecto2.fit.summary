@@ -1,42 +1,20 @@
-<<<<<<< HEAD
-Fitter Status : Successful - Mon Jun 16 18:49:03 2025
+Fitter Status : Successful - Mon Jun 16 22:33:05 2025
 Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 Revision Name : Proyecto2
-Top-level Entity Name : main
-=======
-Fitter Status : Successful - Mon Jun 16 21:04:09 2025
-Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-Revision Name : Proyecto2
-Top-level Entity Name : DataMemory
->>>>>>> 1c83dd193608d3a55a99047d7f347044dc00df2d
+Top-level Entity Name : Proyecto2
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-<<<<<<< HEAD
-Logic utilization (in ALMs) : 2,365 / 41,910 ( 6 % )
-Total registers : 193
+Logic utilization (in ALMs) : 2,379 / 41,910 ( 6 % )
+Total registers : 179
 Total pins : 68 / 499 ( 14 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
 Total RAM Blocks : 0 / 553 ( 0 % )
-Total DSP Blocks : 5 / 112 ( 4 % )
+Total DSP Blocks : 3 / 112 ( 3 % )
 Total HSSI RX PCSs : 0 / 9 ( 0 % )
 Total HSSI PMA RX Deserializers : 0 / 9 ( 0 % )
 Total HSSI TX PCSs : 0 / 9 ( 0 % )
 Total HSSI PMA TX Serializers : 0 / 9 ( 0 % )
 Total PLLs : 0 / 15 ( 0 % )
-=======
-Logic utilization (in ALMs) : 21 / 56,480 ( < 1 % )
-Total registers : 0
-Total pins : 99 / 268 ( 37 % )
-Total virtual pins : 0
-Total block memory bits : 256 / 7,024,640 ( < 1 % )
-Total RAM Blocks : 2 / 686 ( < 1 % )
-Total DSP Blocks : 0 / 156 ( 0 % )
-Total HSSI RX PCSs : 0 / 6 ( 0 % )
-Total HSSI PMA RX Deserializers : 0 / 6 ( 0 % )
-Total HSSI TX PCSs : 0 / 6 ( 0 % )
-Total HSSI PMA TX Serializers : 0 / 6 ( 0 % )
-Total PLLs : 0 / 13 ( 0 % )
->>>>>>> 1c83dd193608d3a55a99047d7f347044dc00df2d
 Total DLLs : 0 / 4 ( 0 % )
