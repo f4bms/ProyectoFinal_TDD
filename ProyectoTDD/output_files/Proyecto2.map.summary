@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Analysis & Synthesis Status : Successful - Mon Jun 16 18:46:35 2025
 Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 Revision Name : Proyecto2
@@ -9,6 +10,19 @@ Total pins : 68
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 5
+=======
+Analysis & Synthesis Status : Successful - Mon Jun 16 21:02:54 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : Proyecto2
+Top-level Entity Name : DataMemory
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 0
+Total pins : 99
+Total virtual pins : 0
+Total block memory bits : 256
+Total DSP Blocks : 0
+>>>>>>> 1c83dd193608d3a55a99047d7f347044dc00df2d
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

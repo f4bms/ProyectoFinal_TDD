@@ -1,0 +1,313 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2023.3 win64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do Proyecto2_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt10".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt11".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt12".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt13".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt14".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt15".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt16".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt17".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt18".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt19".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt20".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt21".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt22".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt23".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt24".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt25".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt26".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt27".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt28".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt29".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt30".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt31".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt32".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt33".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt34".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt35".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt36".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt37".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt38".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt39".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt40".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt41".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt42".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt43".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt44".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt45".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt46".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt47".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt48".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt49".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt50".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt51".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt52".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt53".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt54".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt55".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt56".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt8".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt9".  Locker is jerem@MATILDA.
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Errors: 0, Warnings: 1
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Copying c:/intelfpga_lite/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/sum_N.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:54 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/sum_N.sv 
+# -- Compiling module sum_N
+# 
+# Top level modules:
+# 	sum_N
+# End time: 18:19:54 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:55 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv 
+# -- Compiling module Proyecto2
+# 
+# Top level modules:
+# 	Proyecto2
+# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:55 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv 
+# -- Compiling module nBitsSubstractor
+# 
+# Top level modules:
+# 	nBitsSubstractor
+# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/mux2to1.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:55 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/mux2to1.sv 
+# -- Compiling module mux2to1
+# 
+# Top level modules:
+# 	mux2to1
+# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/fullAdder.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:55 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/fullAdder.sv 
+# -- Compiling module fullAdder
+# 
+# Top level modules:
+# 	fullAdder
+# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/extend.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:55 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/extend.sv 
+# -- Compiling module extend
+# 
+# Top level modules:
+# 	extend
+# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:55 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:56 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv 
+# -- Compiling module InstMemory
+# 
+# Top level modules:
+# 	InstMemory
+# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:56 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv 
+# -- Compiling module ControlUnit
+# 
+# Top level modules:
+# 	ControlUnit
+# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegisterFile.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:56 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegisterFile.sv 
+# -- Compiling module RegisterFile
+# 
+# Top level modules:
+# 	RegisterFile
+# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionalLogic.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:56 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionalLogic.sv 
+# -- Compiling module ConditionalLogic
+# 
+# Top level modules:
+# 	ConditionalLogic
+# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Decoder.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:56 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Decoder.sv 
+# -- Compiling module Decoder
+# 
+# Top level modules:
+# 	Decoder
+# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/MainDecoder.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:56 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/MainDecoder.sv 
+# -- Compiling module MainDecoder
+# 
+# Top level modules:
+# 	MainDecoder
+# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:56 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv 
+# -- Compiling module ALUDecoder
+# 
+# Top level modules:
+# 	ALUDecoder
+# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/PCLogic.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:57 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/PCLogic.sv 
+# -- Compiling module PCLogic
+# 
+# Top level modules:
+# 	PCLogic
+# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionCheck.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:57 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionCheck.sv 
+# -- Compiling module ConditionCheck
+# 
+# Top level modules:
+# 	ConditionCheck
+# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ProcesadorARMv4.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:57 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ProcesadorARMv4.sv 
+# -- Compiling module ProcesadorARMv4
+# 
+# Top level modules:
+# 	ProcesadorARMv4
+# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 18:19:57 on Jun 16,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv 
+# -- Compiling module test_Proyecto2
+# 
+# Top level modules:
+# 	test_Proyecto2
+# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  test_Proyecto2
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" test_Proyecto2 
+# Start time: 18:19:57 on Jun 16,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv(15): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 8, found 7.
+# ** Warning: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv(15): (vopt-2718) [TFMPC] - Missing connection for port 'mem'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.test_Proyecto2(fast)
+# Loading work.Proyecto2(fast)
+# Loading work.InstMemory(fast)
+# Loading work.ProcesadorARMv4(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.Decoder(fast)
+# Loading work.MainDecoder(fast)
+# Loading work.PCLogic(fast)
+# Loading work.ALUDecoder(fast)
+# Loading work.ConditionalLogic(fast)
+# Loading work.ConditionCheck(fast)
+# Loading work.mux2to1(fast)
+# Loading work.mux2to1(fast__1)
+# Loading work.RegisterFile(fast)
+# Loading work.extend(fast)
+# Loading work.alu(fast)
+# Loading work.sum_N(fast)
+# Loading work.nBitsSubstractor(fast)
+# Loading work.fullAdder(fast)
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: jerem  Hostname: MATILDA  ProcessID: 11336
+#           Attempting to use alternate WLF file "./wlftfrexce".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfrexce
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $finish    : D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv(38)
+#    Time: 500 ns  Iteration: 1  Instance: /test_Proyecto2
+# 1
+# Break in Module test_Proyecto2 at D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv line 38
+# End time: 18:20:49 on Jun 16,2025, Elapsed time: 0:00:52
+# Errors: 0, Warnings: 5
