@@ -10,11 +10,12 @@ main:
     LDR R1, =0x4000       @ Reset número aleatorio
     STR R0, [R1]
 
-    LDR R1, =0x5000       @ Reset señal de pausa
+    MOV R0, #3
+    LDR R1, =0x6000       @ Vidas jugador 1
     STR R0, [R1]
 
-    MOV R6, #3            @ Vidas jugador 1
-    MOV R7, #3            @ Vidas jugador 2
+    LDR R1, =0x7000       @ Vidas jugador 2
+    STR R0, [R1]
 
 game_loop:
     LDR R4, =0x4000       @ Dirección del número aleatorio
@@ -46,8 +47,8 @@ game_loop:
     BEQ correct_34
 
 correct_12:
-    MOV R11, #1           @ puerta correcta A = 1
-    MOV R12, #2           @ puerta correcta B = 2
+    MOV R11, #1
+    MOV R12, #2
     B check_players
 
 correct_13:
@@ -81,10 +82,10 @@ check_players:
     BEQ skip_p1_damage
     CMP R8, R12
     BEQ skip_p1_damage
+    LDR R1, =0x6000       @ Dirección vidas jugador 1
+    LDR R6, [R1]
     SUB R6, R6, #1
-    LDR R0, =0x5000
-    MOV R1, #1
-    STR R1, [R0]
+    STR R6, [R1]
 skip_p1_damage:
 
     @ Verificar jugador 2
@@ -92,22 +93,28 @@ skip_p1_damage:
     BEQ skip_p2_damage
     CMP R9, R12
     BEQ skip_p2_damage
+    LDR R1, =0x7000       @ Dirección vidas jugador 2
+    LDR R7, [R1]
     SUB R7, R7, #1
-    LDR R0, =0x5000
-    MOV R1, #1
-    STR R1, [R0]
+    STR R7, [R1]
 skip_p2_damage:
 
-    CMP R6, #0
+    LDR R6, =0x6000       @ Comprobar vidas jugador 1
+    LDR R0, [R6]
+    CMP R0, #0
     BEQ end_game
-    CMP R7, #0
+
+    LDR R7, =0x7000       @ Comprobar vidas jugador 2
+    LDR R0, [R7]
+    CMP R0, #0
     BEQ end_game
 
 wait_clear:
-    LDR R0, =0x5000       @ Esperar a que la señal vuelva a 0
-    LDR R1, [R0]
-    CMP R1, #0
-    BNE wait_clear
+    LDR R3, =0x3000       @ Dirección del temporizador
+
+    LDR R5, [R3]          @ Leer temporizador
+    CMP R5, #9
+    BNE wait_clear   
 
     B game_loop
 
