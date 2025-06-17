@@ -11,9 +11,7 @@ vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/
 vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/mux2to1.sv}
 vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/fullAdder.sv}
 vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/extend.sv}
-vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv}
 vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv}
-vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Deco.sv}
 vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv}
 vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv}
 vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegisterFile.sv}

@@ -5,6 +5,10 @@ Z0 !s12c _opt57
 Z1 !s99 nomlopt
 R0
 R1
+R0
+R1
+R0
+R1
 !s12c _opt56
 R1
 Z2 !s12c _opt55
@@ -895,13 +899,13 @@ n@_opt56
 R28
 R22
 T_opt57
-!s110 1750089790
-Va9Ra`]8nGg=FWn_S2SNAV1
+!s110 1750119599
+VG1Xj4Cm^HohfW;@j>;dOA1
 R23
-=1-e0d55eabcbc1-6850403e-67-4784
+=1-e0d55eabcbc1-6850b4ae-2c3-3014
 R1
 R24
-R29
+R31
 R26
 R27
 n@_opt57
@@ -961,7 +965,7 @@ R22
 valu
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv
 Z32 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z33 !s110 1750089787
+Z33 !s110 1750119595
 !i10b 1
 !s100 hY<E4`gf9>g>WHhdUlhiY0
 IYCE1l6FDZ0Slnn4IgE9[K0
@@ -970,14 +974,14 @@ R22
 w1750028040
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv
-!i122 7
+!i122 6
 L0 1 76
 Z34 VDg1SIo80bB@j0V0VzS_@n1
 Z35 OL;L;2023.3;77
 r1
 !s85 0
 31
-Z36 !s108 1750089787.000000
+Z36 !s108 1750119595.000000
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv|
 !i113 0
@@ -987,7 +991,7 @@ R27
 vALUDecoder
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv
 R32
-Z39 !s110 1750089788
+Z39 !s110 1750119597
 !i10b 1
 !s100 S?hF08?1ZPUUf?WDjg:ig1
 IlTH6F<<>NDE@iG^W0LE>M1
@@ -996,14 +1000,14 @@ R22
 w1750029429
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv
-!i122 15
+!i122 13
 L0 1 67
 R34
 R35
 r1
 !s85 0
 31
-Z40 !s108 1750089788.000000
+Z40 !s108 1750119596.000000
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv|
 !i113 0
@@ -1014,7 +1018,7 @@ n@a@l@u@decoder
 vConditionalLogic
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionalLogic.sv
 R32
-R39
+Z41 !s110 1750119596
 !i10b 1
 !s100 7;3oEkhb8Jj8Y7z`Vk@Pe0
 II00JcXkafV^<XZ1FkCide1
@@ -1023,7 +1027,7 @@ R22
 w1750059945
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionalLogic.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionalLogic.sv
-!i122 12
+!i122 10
 L0 1 58
 R34
 R35
@@ -1050,14 +1054,14 @@ R22
 w1749765136
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionCheck.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionCheck.sv
-!i122 17
+!i122 15
 L0 1 34
 R34
 R35
 r1
 !s85 0
 31
-R40
+Z42 !s108 1750119597.000000
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionCheck.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionCheck.sv|
 !i113 0
@@ -1068,7 +1072,7 @@ n@condition@check
 vControlUnit
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv
 R32
-R39
+R41
 !i10b 1
 !s100 ?M`B8WM;[mPjk?[SiRbe?1
 IKBdkM_FU9:3SeI7]ZU]jl1
@@ -1077,14 +1081,14 @@ R22
 w1750055794
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv
-!i122 10
+!i122 8
 L0 1 68
 R34
 R35
 r1
 !s85 0
 31
-R36
+R40
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv|
 !i113 0
@@ -1092,64 +1096,10 @@ R37
 R38
 R27
 n@control@unit
-vDataMemory
-2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv
-R32
-R33
-!i10b 1
-!s100 f1:jEFbaaR_HYEGJ[]i;a1
-I4B5Z2:OQ6PC<R[a=Y`E8b1
-S1
-R22
-w1749757981
-8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv
-FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv
-!i122 6
-L0 1 24
-R34
-R35
-r1
-!s85 0
-31
-R36
-!s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv|
-!i113 0
-R37
-R38
-R27
-n@data@memory
-vDeco
-2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Deco.sv
-R32
-R33
-!i10b 1
-!s100 kVMQz3`?^AacPo<4zk_[[3
-IG?lS1cai39Rb6<Q3]bdNW3
-S1
-R22
-w1748992935
-8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Deco.sv
-FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Deco.sv
-!i122 8
-L0 6 38
-R34
-R35
-r1
-!s85 0
-31
-R36
-!s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Deco.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Deco.sv|
-!i113 0
-R37
-R38
-R27
-n@deco
 vDecoder
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Decoder.sv
 R32
-R39
+R41
 !i10b 1
 !s100 ooI;D_D>NQfj_hZ[coc^Q2
 I82?Qo[2E3?e3z8XnzKCHc3
@@ -1158,7 +1108,7 @@ R22
 w1750023785
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Decoder.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Decoder.sv
-!i122 13
+!i122 11
 L0 1 50
 R34
 R35
@@ -1186,7 +1136,7 @@ w1750057367
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/extend.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/extend.sv
 !i122 5
-Z41 L0 1 16
+Z43 L0 1 16
 R34
 R35
 r1
@@ -1208,7 +1158,7 @@ R33
 I:[lPb05EX]C1O[3>UGc_b1
 S1
 R22
-Z42 w1749757982
+Z44 w1749757982
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/fullAdder.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/fullAdder.sv
 !i122 4
@@ -1229,23 +1179,23 @@ nfull@adder
 vInstMemory
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv
 R32
-R33
+R41
 !i10b 1
-!s100 eQik66P?5R5]I9jeHT1i30
-IG^VIB>Jaa`Q:DdcH?XaHE3
+!s100 cWOJIQlLcSdKDm73=h9k?1
+I^nlXWaK<VGUNA_hT`]j^Z0
 S1
 R22
-w1750089757
+w1750118802
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv
-!i122 9
-L0 1 26
+!i122 7
+Z45 L0 1 30
 R34
 R35
 r1
 !s85 0
 31
-R36
+R40
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv|
 !i113 0
@@ -1256,7 +1206,7 @@ n@inst@memory
 vMainDecoder
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/MainDecoder.sv
 R32
-R39
+R41
 !i10b 1
 !s100 AcX33ZkcH;8i9aK4XERHI2
 IhMS3_B<JeVF@5hH5IK[kB3
@@ -1265,7 +1215,7 @@ R22
 w1750054962
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/MainDecoder.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/MainDecoder.sv
-!i122 14
+!i122 12
 L0 1 69
 R34
 R35
@@ -1293,7 +1243,7 @@ w1750054314
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/mux2to1.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/mux2to1.sv
 !i122 3
-R41
+R43
 R34
 R35
 r1
@@ -1309,13 +1259,13 @@ R27
 vnBitsSubstractor
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv
 R32
-Z43 !s110 1750089786
+R33
 !i10b 1
 !s100 ZG]jH>fZ38?1h[FLRhRk`0
 ISAb@97PDD]4i@L`A:Hnc03
 S1
 R22
-R42
+R44
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv
 !i122 2
@@ -1325,7 +1275,7 @@ R35
 r1
 !s85 0
 31
-Z44 !s108 1750089786.000000
+R36
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv|
 !i113 0
@@ -1345,14 +1295,14 @@ R22
 w1750014237
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/PCLogic.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/PCLogic.sv
-!i122 16
-R41
+!i122 14
+R43
 R34
 R35
 r1
 !s85 0
 31
-R40
+R42
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/PCLogic.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/PCLogic.sv|
 !i113 0
@@ -1363,7 +1313,7 @@ n@p@c@logic
 vProcesadorARMv4
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ProcesadorARMv4.sv
 R32
-Z45 !s110 1750089789
+R39
 !i10b 1
 !s100 @k_jmBOlh]]bdz]]E3e2`1
 IM^U_8eHne`4FJGjLjhZbj3
@@ -1372,14 +1322,14 @@ R22
 w1750059522
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ProcesadorARMv4.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ProcesadorARMv4.sv
-!i122 18
+!i122 16
 L0 1 164
 R34
 R35
 r1
 !s85 0
 31
-R40
+R42
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ProcesadorARMv4.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ProcesadorARMv4.sv|
 !i113 0
@@ -1390,23 +1340,23 @@ n@procesador@a@r@mv4
 vProyecto2
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv
 R32
-R43
+R33
 !i10b 1
-!s100 cBLcim[klPT_^<?lA4W;d2
-IkWeb8kZP`hof=3:2m@MH=1
+!s100 6hT3G6jl9eHokg]l=c@[93
+IRJZY??eg_N0=`4<>:O[mm1
 S1
 R22
-w1750050217
+w1750118886
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv
 !i122 1
-L0 1 55
+L0 1 61
 R34
 R35
 r1
 !s85 0
 31
-R44
+R36
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv|
 !i113 0
@@ -1417,7 +1367,7 @@ n@proyecto2
 vRegisterFile
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegisterFile.sv
 R32
-R39
+R41
 !i10b 1
 !s100 9G1GaGNHa8OX:ac7[92oH3
 INoi5`mo<;31@gdba5_W@`1
@@ -1426,8 +1376,8 @@ R22
 w1750088693
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegisterFile.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegisterFile.sv
-!i122 11
-L0 1 30
+!i122 9
+R45
 R34
 R35
 r1
@@ -1444,7 +1394,7 @@ n@register@file
 vsum_N
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/sum_N.sv
 R32
-R43
+!s110 1750119594
 !i10b 1
 !s100 Pfji771P2nKV3jiCCSd`52
 I`WFCP[gJ`6cfCL<o?NgCS2
@@ -1460,7 +1410,7 @@ R35
 r1
 !s85 0
 31
-R44
+!s108 1750119594.000000
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/sum_N.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/sum_N.sv|
 !i113 0
@@ -1471,23 +1421,23 @@ nsum_@n
 vtest_Proyecto2
 2D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv
 R32
-R45
+R39
 !i10b 1
-!s100 XT=S4`lZXVWIz?1Z3C^F^0
-ImFC6El[;]DAN<D]8bKnig0
+!s100 LKehO1W`YK5@zVmBhoV5e2
+IN[ULCb2lPHlA@3X<d`K5N3
 S1
 R22
-w1750056829
+w1750119578
 8D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv
 FD:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv
-!i122 19
+!i122 17
 L0 3 39
 R34
 R35
 r1
 !s85 0
 31
-!s108 1750089789.000000
+R42
 !s107 D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD|D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv|
 !i113 0

@@ -13,7 +13,11 @@ module InstMemory(input logic clk, reset,
         instructionMemory[3] = 32'hE2400001; // SUB R0, R0, #1
         instructionMemory[4] = 32'hEAFFFFFC; // B loop (salta 3 instrucciones hacia atrás)
         instructionMemory[5] = 32'hE3A0102A; // end: MOV R1, #42
+        instructionMemory[6] = 32'hE3A02064; // MOV R2, #100 (0x64), dirección base de memoria
+        instructionMemory[7] = 32'hE5821000; // STR R1, [R2] ; almacena el valor de R1 en dirección R2
+        instructionMemory[8] = 32'hE5923000; // LDR R3, [R2] ; carga el valor en R2 a R3
     end
+
 
 
     // Actualizar la instrucción en cada ciclo de reloj

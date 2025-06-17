@@ -31,7 +31,7 @@ module test_Proyecto2;
         
 
         // Wait for a few cycles
-        repeat (20) @(posedge clk);
+        repeat (25) @(posedge clk);
 
 
         // Finish simulation
