@@ -2,36 +2,62 @@
 // test_Proyecto2.sv
 module test_Proyecto2;
 
-    // Clock and reset
-    logic clk;
     logic reset;
+    logic CLOCK_50;
+    logic [8:0] SW;
+    logic [1:0] botones1;
+    logic [1:0] botones2;
+    logic [6:0] HEX0;
+    logic [6:0] HEX1;
+    logic [9:0] LEDR;
+    logic VGA_CLK;
+    logic VGA_HS;
+    logic VGA_VS;
+    logic [7:0] VGA_R;
+    logic [7:0] VGA_G;
+    logic [7:0] VGA_B;
+    logic VGA_BLANK_N;
     logic [15:0][31:0] leds_registers;
-    logic [31:0] instr; // Output for the instruction (PC)
-    logic [31:0] PC_led; // Output for the PC (same as instr for this test)
-    logic [31:0] ALUres; // Output for the ALU result
-    logic [1:0] F32;
+    logic [31:0] instrucciones; // No se usa en el test, pero se puede conectar si es necesario
 
-    // Instantiate the DUT
+    // Instancia del módulo Proyecto2
     Proyecto2 dut (
-        .clk(clk),
         .reset(reset),
-        .leds_registers(leds_registers), // Output for the LEDs of the registers
-        .instr(instr), // Output for the instruction (PC)
-        .PC_led(PC_led) // Output for the PC (same as instr for this test)
-        , .ALUres(ALUres) // Output for the ALU result
-        , .F32(F32)
+        .CLOCK_50(CLOCK_50),
+        .SW(SW),
+        .botones1(botones1),
+        .botones2(botones2),
+        .HEX0(HEX0),
+        .HEX1(HEX1),
+        .LEDR(LEDR),
+        .VGA_CLK(VGA_CLK),
+        .VGA_HS(VGA_HS),
+        .VGA_VS(VGA_VS),
+        .VGA_R(VGA_R),
+        .VGA_G(VGA_G),
+        .VGA_B(VGA_B),
+        .VGA_BLANK_N(VGA_BLANK_N),
+        .leds_registers(leds_registers),
+        .instrucciones(instrucciones) // No se usa en el test, pero se puede conectar si es necesario
     );
 
     // Clock generation for 50MHz (period = 20ns, half-period = 10ns)
-    initial clk = 1;
-    always #10 clk = ~clk; 
+    initial CLOCK_50 = 1;
+    always #10 CLOCK_50 = ~CLOCK_50;
 
     // Test sequence
     initial begin
+        reset = 1; // Start with reset
+        SW = 9'b0;
+        botones1 = 2'b01;
+        botones2 = 2'b00;
+        #12
+        reset = 0; // Release reset after a short time
+
         
 
         // Wait for a few cycles
-        repeat (25) @(posedge clk);
+        repeat (200) @(posedge CLOCK_50);
 
 
         // Finish simulation

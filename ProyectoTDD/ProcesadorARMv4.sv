@@ -65,6 +65,7 @@ module ProcesadorARMv4(
         .y(PC_Next) // Siguiente valor del PC
     );
 
+    // Inicialización del PC para simulación
     
 
     always_ff @(posedge clk or posedge reset) begin
@@ -99,7 +100,7 @@ module ProcesadorARMv4(
         .A2(RA2),
         .A3(Instruction[15:12]), // Rd
         .WD3(WriteDataReg), // Datos a escribir en el registro
-        .R15(PCPlus4), // Usualmente R15 es el PC
+        .R15(PCPlus8), // Usualmente R15 es el PC
         .WE(RegWrite), // Señal de escritura
         .RD1(RD1), // Dato leído del registro A1
         .RD2(RD2) // Dato leído del registro A2

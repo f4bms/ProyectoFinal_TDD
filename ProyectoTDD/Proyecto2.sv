@@ -1,27 +1,29 @@
 module Proyecto2( // No es proyecto 1?
-	 input  logic reset,
+	input  logic reset,
     input  logic CLOCK_50,
-    input  logic [3:0] KEY,
-	 input  logic serial_in,
-	 input  logic [8:0] SW,
-	 output logic [6:0] HEX0,
-	 output logic [6:0] HEX1,
-	 output logic [9:0] LEDR,
+	input  logic [8:0] SW,
+    input logic [1:0] botones1,
+    input logic [1:0] botones2,
+	output logic [6:0] HEX0,
+	output logic [6:0] HEX1,
+	output logic [9:0] LEDR,
     output logic VGA_CLK,
     output logic VGA_HS,
     output logic VGA_VS,
     output logic [7:0] VGA_R,
     output logic [7:0] VGA_G,
     output logic [7:0] VGA_B,
-    output logic VGA_BLANK_N
+    output logic VGA_BLANK_N,
+    output logic [15:0][31:0] leds_registers,
+	output logic [31:0] instrucciones
 );
+
+//  ----------------- Memoria de instrucciones -------------------
 logic [31:0] Instruction; // Instrucción de 32 bits
 logic [31:0] PC; // Contador de Programa
 
-assign instr = Instruction; // Asignar el PC a la salida instr
-assign PC_led = PC; // Asignar el PC a la salida PC_led
+assign instrucciones = Instruction; // Salida para las instrucciones
 
-// Memoria de instrucciones
 InstMemory inst_mem (
     .clk(VGA_CLK),
     .reset(reset),
@@ -29,28 +31,13 @@ InstMemory inst_mem (
     .Instruction(Instruction)
 );
 
-// Memoria de datos
+// ----------------- Procesador ARMv4 ---------------------------------
 logic [31:0] WriteDataMem; // Datos a escribir en el registro
 logic [31:0] AddressDataMem; // Dirección de memoria para escritura
 logic WriteEnableMem; // Habilitar escritura en memoria
 logic [31:0] ReadData; // Datos leídos de memoria
 
-// Memoria de datos simple: un solo registro de 32 bits
-logic [31:0] single_reg;
 
-always_ff @(posedge VGA_CLK or posedge reset) begin
-    if (reset) begin
-        single_reg <= 32'd0;
-    end else if (WriteEnableMem) begin
-        single_reg <= WriteDataMem;
-    end
-end
-
-assign ReadData = single_reg;
-assign mem = single_reg;
-
-
-// Procesador ARMv4
 ProcesadorARMv4 proc (
     .clk(VGA_CLK),
     .reset(reset),
@@ -60,31 +47,38 @@ ProcesadorARMv4 proc (
     .AddressDataMem(AddressDataMem),
     .WriteEnableMem(WriteEnableMem), // No se escribe en memoria en este momento
     .ReadData(ReadData),
-    .leds_registers() // Salida para los LEDs de los registros
+    .leds_registers(leds_registers) // Salida para los LEDs de los registros
     , .ALUres() // Salida para el resultado de la ALU
     , .F32()
 );
 
-logic [31:0] A; // Dirección de memoria
-logic [31:0] WD; // Datos a escribir
-logic WE; // Señal de escritura
-logic [31:0] RD; // Datos leídos
+// ----------------- Memoria de video -------------------
+
+
+logic [31:0] VGAAddr, DataVideo; // Dirección de memoria para lectura
+logic time_up = 0;
 
 DataMemory video_memory(
     .clk(VGA_CLK),
-    .reset(reset),
-    .A(A), // Dirección de memoria
-    .WD(WD), // Datos a escribir
-    .WE(WD), // Señal de escritura
-    .RD(RD) // Datos leídos
+	.reset(reset),
+	.addr_A(AddressDataMem),  // Dirección de memoria para escritura
+	.addr_B(VGAAddr), // Dirección de memoria para lectura de VGA
+	.WD(WriteDataMem), // Datos a escribir
+	.WE(WriteEnableMem), // Señal de escritura
+	.botones1(botones1), // Botones del jugador 1
+	.botones2(botones2), // Botones del jugador 2
+	.time_up(time_up), // Indica si el tiempo se ha agotado
+	.RD(ReadData), // Datos leídos de memoria
+	.DataVideo(DataVideo) // Datos de video para VGA
 );
 
 
-//------------------------ VGA ---------------------------------
 
+//------------------------ VGA ---------------------------------
 clock_div clock_divider(
 	.clk_in(CLOCK_50),
-	.clk_out(VGA_CLK));
+	.clk_out(VGA_CLK)
+);
 
 logic [23:0] rgb_color;
 
@@ -94,28 +88,37 @@ logic [1:0] p1_lives = 2'b10;
 logic [1:0] p2_lives = 2'b11;
 logic [1:0] player_1_pos;
 logic [1:0] player_2_pos;
-logic time_up = 0;
+
 logic resume;
 
 logic [24:0] sec_1 = 25'd25_000_000;
-counter #(25) counter_pause(.clk(VGA_CLK), .enable(time_up), .reset(reset), .max(sec_1), .done(resume), .q());
+counter #(25) counter_pause(
+	.clk(VGA_CLK), 
+	.enable(time_up), 
+	.reset(reset), 
+	.max(sec_1), 
+	.done(resume), 
+	.q()
+);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // SEVEN SEGMENT TIMER
 
-logic [3:0] seg_0, seg_1 = 0;
+logic [3:0] seg_0, seg_1;
 logic [3:0] tics;
 logic [3:0] max_time = 4'b1010;
 logic enable = 1;
 logic [11:0] bcd_time;
+
+assign seg_0 = bcd_time[7:4];
+assign seg_1 = bcd_time[11:8];
 
 seven_segment_driver seg0(seg_0, HEX0);
 seven_segment_driver seg1(seg_1, HEX1);
 
 BinToBCD res_converter(tics, bcd_time);
 
-assign seg_0 = bcd_time[7:4];
-assign seg_1 = bcd_time[11:8];
+
 
 timer timer_count (
 	.clk(VGA_CLK), 
@@ -149,16 +152,8 @@ vga_driver driver(
     .VGA_BLANK_N(VGA_BLANK_N)
 );
 
-logic [2:0] numero; 
-
-random_gen rand_door(
-    .clk(VGA_CLK),            // reloj del sistema
-    .rst(reset),            // reset síncrono
-    .numero()    // número aleatorio del 1 al 6
-);
-
 always@(posedge VGA_CLK) begin
-	if(tics >= 4'b1010) begin
+	if(tics >= 4'b0001) begin
 		time_up <= 1;
 		enable <= 0;
 	end
@@ -177,22 +172,28 @@ end
 logic [2:0] count;
 counter #(3) counter_read(.clk(VGA_CLK), .enable(1), .reset(reset), .max(3'b111), .done(), .q(count));
 
+// Datos del procesador a la memoria de video
+// Addr 6000: vidas del jugador 1
+// Addr 7000: vidas del jugador 2
+// Addr 8000: puertas correctas (1100 = puertas 1 y 2 correctas)
+// Addr 9000: posición del jugador 1 (00 = puerta 1, 01 = puerta 2, 10 = puerta 3, 11 = puerta 4)
+// Addr 10000: posición del jugador 2 (00 = puerta 1, 01 = puerta 2, 10 = puerta 3, 11 = puerta 4)
 always_ff @(posedge VGA_CLK) begin
 	if(count == 2'b00) begin
-		A <= 32'h00006000;
-		p1_lives <= RD[1:0];
+		VGAAddr <= 32'h00006000;
+		p1_lives <= DataVideo[1:0];
 	end
 	else if(count == 2'b01) begin
-		A <= 32'h00007000;
-		p2_lives <= RD[1:0];
+		VGAAddr <= 32'h00007000;
+		p2_lives <= DataVideo[1:0];
 	end
 	else if(count == 2'b10) begin
-		A <= 32'h00003000;
-		correct_door_1 <= RD[1:0];
+		VGAAddr <= 32'h00003000;
+		correct_door_1 <= DataVideo[1:0];
 	end
 	else if(count == 2'b11) begin
-		A <= 32'h00004000;
-		correct_door_2 <= RD[1:0];
+		VGAAddr <= 32'h00004000;
+		correct_door_2 <= DataVideo[1:0];
 	end		
 end
 

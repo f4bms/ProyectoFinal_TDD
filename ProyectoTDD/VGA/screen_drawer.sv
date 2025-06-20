@@ -5,8 +5,8 @@ module screen_drawer(
 	output logic [23:0] rgb_color
 );
 
-logic [9:0] x = 0;  
-logic [9:0] y = 0;  
+logic [9:0] x;  
+logic [9:0] y;  
 logic [9:0] x_max = 799;
 logic [9:0] y_max = 524;
 logic done;

@@ -18,12 +18,12 @@ module random_gen (
     // Mapear valor del LFSR a 1–6
     always_comb begin
         case (lfsr % 6)
-            0: valor_tmp = 3'd1;
-            1: valor_tmp = 3'd2;
-            2: valor_tmp = 3'd3;
-            3: valor_tmp = 3'd4;
-            4: valor_tmp = 3'd5;
-            5: valor_tmp = 3'd6;
+            0: valor_tmp = 3'd0;
+            1: valor_tmp = 3'd1;
+            2: valor_tmp = 3'd2;
+            3: valor_tmp = 3'd3;
+            4: valor_tmp = 3'd4;
+            5: valor_tmp = 3'd5;
             default: valor_tmp = 3'd1;
         endcase
     end

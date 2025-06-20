@@ -70,7 +70,17 @@
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt54".  Locker is jerem@MATILDA.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt55".  Locker is jerem@MATILDA.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt56".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt57".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt58".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt59".  Locker is jerem@MATILDA.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt60".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt61".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt62".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt63".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt64".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt65".  Locker is jerem@MATILDA.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt66".  Locker is jerem@MATILDA.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is jerem@MATILDA.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt8".  Locker is jerem@MATILDA.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt9".  Locker is jerem@MATILDA.
@@ -83,196 +93,354 @@
 # Copying c:/intelfpga_lite/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ram_vid.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:02 on Jun 20,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ram_vid.v 
+# -- Compiling module ram_vid
+# 
+# Top level modules:
+# 	ram_vid
+# End time: 11:37:02 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/sum_N.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:54 on Jun 16,2025
+# Start time: 11:37:02 on Jun 20,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/sum_N.sv 
 # -- Compiling module sum_N
 # 
 # Top level modules:
 # 	sum_N
-# End time: 18:19:54 on Jun 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:55 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv 
-# -- Compiling module Proyecto2
-# 
-# Top level modules:
-# 	Proyecto2
-# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:55 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv 
-# -- Compiling module nBitsSubstractor
-# 
-# Top level modules:
-# 	nBitsSubstractor
-# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/mux2to1.sv}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:55 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/mux2to1.sv 
-# -- Compiling module mux2to1
-# 
-# Top level modules:
-# 	mux2to1
-# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/fullAdder.sv}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:55 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/fullAdder.sv 
-# -- Compiling module fullAdder
-# 
-# Top level modules:
-# 	fullAdder
-# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/extend.sv}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:55 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/extend.sv 
-# -- Compiling module extend
-# 
-# Top level modules:
-# 	extend
-# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:55 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv 
-# -- Compiling module alu
-# 
-# Top level modules:
-# 	alu
-# End time: 18:19:55 on Jun 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:56 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv 
-# -- Compiling module InstMemory
-# 
-# Top level modules:
-# 	InstMemory
-# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:56 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv 
-# -- Compiling module ControlUnit
-# 
-# Top level modules:
-# 	ControlUnit
-# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# End time: 11:37:02 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegisterFile.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:56 on Jun 16,2025
+# Start time: 11:37:02 on Jun 20,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegisterFile.sv 
 # -- Compiling module RegisterFile
 # 
 # Top level modules:
 # 	RegisterFile
-# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# End time: 11:37:03 on Jun 20,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionalLogic.sv}
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/readMUX.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:56 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionalLogic.sv 
-# -- Compiling module ConditionalLogic
+# Start time: 11:37:03 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/readMUX.sv 
+# -- Compiling module readMUX
 # 
 # Top level modules:
-# 	ConditionalLogic
-# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# 	readMUX
+# End time: 11:37:03 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Decoder.sv}
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/random_gen.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:56 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Decoder.sv 
-# -- Compiling module Decoder
+# Start time: 11:37:03 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/random_gen.sv 
+# -- Compiling module random_gen
 # 
 # Top level modules:
-# 	Decoder
-# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
+# 	random_gen
+# End time: 11:37:03 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/MainDecoder.sv}
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:56 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/MainDecoder.sv 
-# -- Compiling module MainDecoder
+# Start time: 11:37:03 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv 
+# -- Compiling module Proyecto2
 # 
 # Top level modules:
-# 	MainDecoder
-# End time: 18:19:56 on Jun 16,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv}
-# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:56 on Jun 16,2025
-# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv 
-# -- Compiling module ALUDecoder
-# 
-# Top level modules:
-# 	ALUDecoder
-# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:01
+# 	Proyecto2
+# End time: 11:37:03 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/PCLogic.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:57 on Jun 16,2025
+# Start time: 11:37:03 on Jun 20,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/PCLogic.sv 
 # -- Compiling module PCLogic
 # 
 # Top level modules:
 # 	PCLogic
-# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:00
+# End time: 11:37:03 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:03 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/nBitsSubstractor.sv 
+# -- Compiling module nBitsSubstractor
+# 
+# Top level modules:
+# 	nBitsSubstractor
+# End time: 11:37:03 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/mux2to1.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:03 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/mux2to1.sv 
+# -- Compiling module mux2to1
+# 
+# Top level modules:
+# 	mux2to1
+# End time: 11:37:03 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/MainDecoder.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:04 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/MainDecoder.sv 
+# -- Compiling module MainDecoder
+# 
+# Top level modules:
+# 	MainDecoder
+# End time: 11:37:04 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/fullAdder.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:04 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/fullAdder.sv 
+# -- Compiling module fullAdder
+# 
+# Top level modules:
+# 	fullAdder
+# End time: 11:37:04 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/extend.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:04 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/extend.sv 
+# -- Compiling module extend
+# 
+# Top level modules:
+# 	extend
+# End time: 11:37:04 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Decoder.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:04 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Decoder.sv 
+# -- Compiling module Decoder
+# 
+# Top level modules:
+# 	Decoder
+# End time: 11:37:04 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:04 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 11:37:04 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:04 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ControlUnit.sv 
+# -- Compiling module ControlUnit
+# 
+# Top level modules:
+# 	ControlUnit
+# End time: 11:37:04 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionCheck.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:57 on Jun 16,2025
+# Start time: 11:37:04 on Jun 20,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionCheck.sv 
 # -- Compiling module ConditionCheck
 # 
 # Top level modules:
 # 	ConditionCheck
-# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:00
+# End time: 11:37:05 on Jun 20,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionalLogic.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:05 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ConditionalLogic.sv 
+# -- Compiling module ConditionalLogic
+# 
+# Top level modules:
+# 	ConditionalLogic
+# End time: 11:37:05 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:05 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ALUDecoder.sv 
+# -- Compiling module ALUDecoder
+# 
+# Top level modules:
+# 	ALUDecoder
+# End time: 11:37:05 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:05 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 11:37:05 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/color_decoder.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:05 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/color_decoder.sv 
+# -- Compiling module color_decoder
+# 
+# Top level modules:
+# 	color_decoder
+# End time: 11:37:05 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/video_sync_generator.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:05 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/video_sync_generator.sv 
+# -- Compiling module video_sync_generator
+# 
+# Top level modules:
+# 	video_sync_generator
+# End time: 11:37:05 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/vga_driver.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:05 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/vga_driver.sv 
+# -- Compiling module vga_driver
+# 
+# Top level modules:
+# 	vga_driver
+# End time: 11:37:05 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/screen_drawer.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:05 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/screen_drawer.sv 
+# -- Compiling module screen_drawer
+# 
+# Top level modules:
+# 	screen_drawer
+# End time: 11:37:06 on Jun 20,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/counter.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:06 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/counter.sv 
+# -- Compiling module counter
+# 
+# Top level modules:
+# 	counter
+# End time: 11:37:06 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/clock_div.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:06 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/clock_div.sv 
+# -- Compiling module clock_div
+# 
+# Top level modules:
+# 	clock_div
+# End time: 11:37:06 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Deco.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:06 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Deco.sv 
+# -- Compiling module Deco
+# 
+# Top level modules:
+# 	Deco
+# End time: 11:37:06 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/sprites.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:06 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/sprites.sv 
+# -- Compiling module sprites
+# 
+# Top level modules:
+# 	sprites
+# End time: 11:37:06 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/timer.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:06 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/timer.sv 
+# -- Compiling module timer
+# 
+# Top level modules:
+# 	timer
+# End time: 11:37:06 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/seven_segment_driver.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:06 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/seven_segment_driver.sv 
+# -- Compiling module seven_segment_driver
+# 
+# Top level modules:
+# 	seven_segment_driver
+# End time: 11:37:07 on Jun 20,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/BinToBCD.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:07 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/BinToBCD.sv 
+# -- Compiling module BinToBCD
+# 
+# Top level modules:
+# 	BinToBCD
+# End time: 11:37:07 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegBotones.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:07 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegBotones.sv 
+# -- Compiling module RegBotones
+# 
+# Top level modules:
+# 	RegBotones
+# End time: 11:37:07 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ProcesadorARMv4.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:57 on Jun 16,2025
+# Start time: 11:37:07 on Jun 20,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/ProcesadorARMv4.sv 
 # -- Compiling module ProcesadorARMv4
 # 
 # Top level modules:
 # 	ProcesadorARMv4
-# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:00
+# End time: 11:37:07 on Jun 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 11:37:07 on Jun 20,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/InstMemory.sv 
+# -- Compiling module InstMemory
+# 
+# Top level modules:
+# 	InstMemory
+# End time: 11:37:07 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD {D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 18:19:57 on Jun 16,2025
+# Start time: 11:37:07 on Jun 20,2025
 # vlog -reportprogress 300 -sv -work work "+incdir+D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD" D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv 
 # -- Compiling module test_Proyecto2
 # 
 # Top level modules:
 # 	test_Proyecto2
-# End time: 18:19:57 on Jun 16,2025, Elapsed time: 0:00:00
+# End time: 11:37:07 on Jun 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  test_Proyecto2
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" test_Proyecto2 
-# Start time: 18:19:57 on Jun 16,2025
+# Start time: 11:37:07 on Jun 20,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Warning: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv(15): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 8, found 7.
-# ** Warning: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv(15): (vopt-2718) [TFMPC] - Missing connection for port 'mem'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.test_Proyecto2(fast)
 # Loading work.Proyecto2(fast)
@@ -293,21 +461,49 @@
 # Loading work.sum_N(fast)
 # Loading work.nBitsSubstractor(fast)
 # Loading work.fullAdder(fast)
+# Loading work.DataMemory(fast)
+# Loading work.Deco(fast)
+# Loading work.ram_vid(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+# Loading altera_mf_ver.altsyncram_body(fast)
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES(fast)
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.readMUX(fast)
+# Loading work.RegBotones(fast)
+# Loading work.random_gen(fast)
+# Loading work.clock_div(fast)
+# Loading work.counter(fast)
+# Loading work.seven_segment_driver(fast)
+# Loading work.BinToBCD(fast)
+# Loading work.timer(fast)
+# Loading work.screen_drawer(fast)
+# Loading work.counter(fast__1)
+# Loading work.sprites(fast)
+# Loading work.color_decoder(fast)
+# Loading work.vga_driver(fast)
+# Loading work.video_sync_generator(fast)
+# Loading work.counter(fast__2)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegBotones.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /test_Proyecto2/dut/video_memory/reg_botones1 File: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 67
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'we'. The port definition is at: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/RegBotones.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /test_Proyecto2/dut/video_memory/reg_botones2 File: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/DataMemory.sv Line: 75
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'enable'. The port definition is at: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/counter.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /test_Proyecto2/dut/screen/counter_x File: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/screen_drawer.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (32) for port 'enable'. The port definition is at: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/VGA/counter.sv(2).
+#    Time: 0 ps  Iteration: 0  Instance: /test_Proyecto2/dut/counter_read File: D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/Proyecto2.sv Line: 173
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jerem  Hostname: MATILDA  ProcessID: 11336
-#           Attempting to use alternate WLF file "./wlftfrexce".
+#           Attempting to use alternate WLF file "./wlftkdxws3".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftfrexce
+#           Using alternate file: ./wlftkdxws3
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $finish    : D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv(38)
-#    Time: 500 ns  Iteration: 1  Instance: /test_Proyecto2
+# ** Note: $finish    : D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv(64)
+#    Time: 4 us  Iteration: 1  Instance: /test_Proyecto2
 # 1
-# Break in Module test_Proyecto2 at D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv line 38
-# End time: 18:20:49 on Jun 16,2025, Elapsed time: 0:00:52
-# Errors: 0, Warnings: 5
+# Break in Module test_Proyecto2 at D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/test_Proyecto2.sv line 64
