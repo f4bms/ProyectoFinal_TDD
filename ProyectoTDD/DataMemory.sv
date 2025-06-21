@@ -5,11 +5,13 @@ module DataMemory(
     input logic [31:0] addr_B, // Dirección de memoria para lectura de VGA
     input logic [31:0] WD, // Datos a escribir
     input logic WE, // Señal de escritura
-	input logic [1:0]   botones1,
-	input logic [1:0]   botones2,
+	 input logic [3:0]   posJ1,
+	 input logic [3:0]   posJ2,
     input logic time_up,
     output logic [31:0] RD, // Datos leídos
-    output logic [31:0] DataVideo // Datos de video para VGA
+    output logic [31:0] DataVideo, // Datos de video para VGA
+	 output logic [3:0] pos_J1,
+	 output logic [3:0] pos_J2
 );
 
     // Instancia del módulo Deco
@@ -17,6 +19,9 @@ module DataMemory(
     logic [2:0] rdsel;
     logic [31:0] RDataRAM, RDataIO1, RDataIO2, RDataRamNum, RDataTimeUp;
     logic [2:0] ramdNum;
+	 
+	 assign pos_J1 = RDataIO1;
+	 assign pos_J2 = RDataIO2;
 
     assign RDataRamNum = {29'b0, ramdNum}; 
     assign RDataTimeUp = {31'b0, time_up};
@@ -60,14 +65,14 @@ module DataMemory(
         .rdata1(RDataIO1),
         .rdata2(RDataIO2),
         .rdata3(RDataRamNum),
-        .rdata4(32'd1),
+        .rdata4(RDataTimeUp),
         .readData(RD)
     );
         
     RegBotones reg_botones1 (
         .clk(clk),
         .reset(reset),
-        .botones(botones1),
+        .botones(posJ1),
         .we(1), // Habilita escritura en el registro de botones
         .data_out(RDataIO1)
     );
@@ -75,7 +80,7 @@ module DataMemory(
     RegBotones reg_botones2 (
         .clk(clk),
         .reset(reset),
-        .botones(botones2),
+        .botones(posJ2),
         .we(1), // Habilita escritura en el registro de botones
         .data_out(RDataIO2)
     );

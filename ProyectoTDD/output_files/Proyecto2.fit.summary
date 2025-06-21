@@ -1,17 +1,17 @@
-Fitter Status : Successful - Mon Jun 16 22:33:05 2025
+Fitter Status : Successful - Sat Jun 21 11:20:58 2025
 Quartus Prime Version : 18.1.1 Build 646 04/11/2019 SJ Lite Edition
 Revision Name : Proyecto2
 Top-level Entity Name : Proyecto2
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 2,379 / 41,910 ( 6 % )
-Total registers : 179
-Total pins : 68 / 499 ( 14 % )
+Logic utilization (in ALMs) : 2,982 / 41,910 ( 7 % )
+Total registers : 846
+Total pins : 67 / 499 ( 13 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 5,662,720 ( 0 % )
-Total RAM Blocks : 0 / 553 ( 0 % )
-Total DSP Blocks : 3 / 112 ( 3 % )
+Total block memory bits : 256 / 5,662,720 ( < 1 % )
+Total RAM Blocks : 2 / 553 ( < 1 % )
+Total DSP Blocks : 7 / 112 ( 6 % )
 Total HSSI RX PCSs : 0 / 9 ( 0 % )
 Total HSSI PMA RX Deserializers : 0 / 9 ( 0 % )
 Total HSSI TX PCSs : 0 / 9 ( 0 % )
