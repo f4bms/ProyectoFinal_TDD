@@ -1,9 +1,7 @@
 module Proyecto2( // No es proyecto 1?
 	input  logic reset,
     input  logic CLOCK_50,
-	 input  logic [8:0] SW,
-    input logic [1:0] botones1,
-    input logic [1:0] botones2,
+	input  logic [8:0] SW,
 	output logic [6:0] HEX0,
 	output logic [6:0] HEX1,
 	output logic [9:0] LEDR,
@@ -14,15 +12,14 @@ module Proyecto2( // No es proyecto 1?
     output logic [7:0] VGA_G,
     output logic [7:0] VGA_B,
     output logic VGA_BLANK_N
-   //output logic [15:0][31:0] leds_registers,
-	//output logic [31:0] instrucciones
+    //output logic [15:0][31:0] leds_registers,
+    //output logic [31:0] instrucciones
 );
 
 //  ----------------- Memoria de instrucciones -------------------
 logic [31:0] Instruction; // Instrucción de 32 bits
 logic [31:0] PC; // Contador de Programa
 
-assign instrucciones = Instruction; // Salida para las instrucciones
 
 InstMemory inst_mem (
     .clk(VGA_CLK),
@@ -47,7 +44,7 @@ ProcesadorARMv4 proc (
     .AddressDataMem(AddressDataMem),
     .WriteEnableMem(WriteEnableMem), // No se escribe en memoria en este momento
     .ReadData(ReadData),
-    .leds_registers(leds_registers) // Salida para los LEDs de los registros
+    .leds_registers() // Salida para los LEDs de los registros
     , .ALUres() // Salida para el resultado de la ALU
     , .F32()
 );
@@ -108,7 +105,7 @@ counter #(25) counter_pause(
 
 logic [3:0] seg_0, seg_1;
 logic [3:0] tics;
-logic [3:0] max_time = 4'b1010;
+logic [3:0] max_time = 4'd10;
 logic enable = 1;
 logic [11:0] bcd_time;
 
@@ -122,7 +119,7 @@ BinToBCD res_converter(tics, bcd_time);
 
 timer timer_count (
 	.clk(VGA_CLK), 
-	.reset(resume),
+	.reset(resume | reset),
 	.enable(enable),
 	.seconds(tics)
 );   
@@ -132,7 +129,7 @@ screen_drawer screen(
 	.p1_lives(p1_lives),
 	.p2_lives(p2_lives),
 	.correct_door_1(correct_door_1),
-	.correct_door_2(correct_door_1),
+	.correct_door_2(correct_door_2),
 	.player_1_pos(player_1_pos),
 	.player_2_pos(player_2_pos),
 	.resume(resume),
@@ -153,7 +150,7 @@ vga_driver driver(
 );
 
 always@(posedge VGA_CLK) begin
-	if(tics >= 4'b1010) begin
+	if(tics >= max_time) begin
 		time_up <= 1;
 		enable <= 0;
 	end
@@ -170,7 +167,7 @@ always@(posedge VGA_CLK) begin
 end
 
 logic [3:0] count;
-counter #(4) counter_read(.clk(VGA_CLK), .enable(1), .reset(reset), .max(4'b0111), .done(), .q(count));
+counter #(4) counter_read(.clk(VGA_CLK), .enable(1), .reset(reset), .max(4'b0010), .done(), .q(count));
 
 // Datos del procesador a la memoria de video
 // Addr 6000: vidas del jugador 1
@@ -195,6 +192,7 @@ always_ff @(posedge VGA_CLK) begin
 		correct_door_2 <= DataVideo[3:2];
 		LEDR[5:4] <= correct_door_1;
 		LEDR[3:2] <= correct_door_2;
+
 	end		
 end
 

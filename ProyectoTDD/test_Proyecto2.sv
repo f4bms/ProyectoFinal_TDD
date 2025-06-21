@@ -5,8 +5,6 @@ module test_Proyecto2;
     logic reset;
     logic CLOCK_50;
     logic [8:0] SW;
-    logic [1:0] botones1;
-    logic [1:0] botones2;
     logic [6:0] HEX0;
     logic [6:0] HEX1;
     logic [9:0] LEDR;
@@ -25,8 +23,6 @@ module test_Proyecto2;
         .reset(reset),
         .CLOCK_50(CLOCK_50),
         .SW(SW),
-        .botones1(botones1),
-        .botones2(botones2),
         .HEX0(HEX0),
         .HEX1(HEX1),
         .LEDR(LEDR),
@@ -48,9 +44,8 @@ module test_Proyecto2;
     // Test sequence
     initial begin
         reset = 1; // Start with reset
-        SW = 9'b0;
-        botones1 = 2'b01;
-        botones2 = 2'b00;
+        SW[7:4] = 4'b1000;
+        SW[3:0] = 4'b0100;
         #12
         reset = 0; // Release reset after a short time
 

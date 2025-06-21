@@ -1,4 +1,4 @@
-/* Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition */
+/* Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSXFC6D6F31) Path("C:/Users/USER/Documents/TEC/2025/I semestre/TDD/Proyecto/ProyectoTDD/output_files/") File("Proyecto2.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSXFC6D6F31) Path("D:/Proyecto_Final/ProyectoFinal_TDD/ProyectoTDD/output_files/") File("Proyecto2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

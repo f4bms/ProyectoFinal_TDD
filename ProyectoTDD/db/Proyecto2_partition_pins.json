@@ -200,11 +200,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{

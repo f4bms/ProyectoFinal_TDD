@@ -10,8 +10,8 @@ module DataMemory(
     input logic time_up,
     output logic [31:0] RD, // Datos leídos
     output logic [31:0] DataVideo, // Datos de video para VGA
-	 output logic [3:0] pos_J1,
-	 output logic [3:0] pos_J2
+	 output logic [1:0] pos_J1,
+	 output logic [1:0] pos_J2
 );
 
     // Instancia del módulo Deco
@@ -20,8 +20,8 @@ module DataMemory(
     logic [31:0] RDataRAM, RDataIO1, RDataIO2, RDataRamNum, RDataTimeUp;
     logic [2:0] ramdNum;
 	 
-	 assign pos_J1 = RDataIO1;
-	 assign pos_J2 = RDataIO2;
+	 assign pos_J1 = RDataIO1[1:0];
+	 assign pos_J2 = RDataIO2[1:0];
 
     assign RDataRamNum = {29'b0, ramdNum}; 
     assign RDataTimeUp = {31'b0, time_up};
