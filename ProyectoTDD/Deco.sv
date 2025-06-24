@@ -4,39 +4,35 @@ la salida según el adress, habilita la salida de we ya sea para la 1.memoria, 2
 tmb se le da un rd que va a ser mi mux y va a decir cuando se lee cual dato.*/
 
 module Deco (
-	input logic [19:0] addr,
+	input logic [31:0] addr,
 	input logic memWrite,
-	output logic wem, we1, we2, we3,
-	output logic [1:0] rdsel
+	output logic  wenRAM, // Write enable para RAM
+	output logic [2:0] rdsel
 );
 
 	always_comb begin
-	
-		wem   = 0;
-		we1   = 0;
-		we2   = 0;
-		we3   = 0;
-		rdsel = 2'b00;
 
-		if (addr == 20'h20000) begin
-			rdsel = 2'b00;
-			if (memWrite)
-				wem = 1;
+		wenRAM = 0;
+		rdsel = 3'b000;
+
+		if (addr >= 32'h00006000 && addr <= 32'h00010000) begin // Dirección de la RAM (salida del procesador)
+			rdsel = 3'b000;
+			wenRAM = memWrite; // Habilita escritura en RAM si memWrite es 1
 		end
-		else if (addr >= 20'h18000 && addr <= 20'h1FFFF) begin
-			rdsel = 2'b01;
-			if (memWrite)
-			we1 = 1;
+		else if (addr == 32'h00001000) begin // Dirección del Jugador 1
+			rdsel = 3'b001;
 		end
-		else if (addr == 20'h10000) begin
-			rdsel = 2'b10;
-			if (memWrite)
-				we2 = 1;
+		else if (addr == 32'h00002000) begin // Dirección del Jugador 2
+			rdsel = 3'b010;
 		end
-		else if (addr == 20'h003EB) begin
-			rdsel = 2'b11;
-			if (memWrite)
-				we3 = 1;
+		else if (addr == 32'h00004000) begin // Dirección del número aleatorio
+			rdsel = 3'b011;
+		end 
+		else if (addr == 32'h00003000) begin // Dirección del tiempo
+			rdsel = 3'b100;
+		end 
+		else begin
+			rdsel = 3'b000; // Default case
 		end
 	end	
 

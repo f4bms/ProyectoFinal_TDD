@@ -1,12 +1,12 @@
 module screen_drawer(
 	input  logic clk,
-	input  logic [1:0] correct_door, p1_lives, p2_lives, player_1_pos, player_2_pos,
-	input  logic time_up,
+	input  logic [1:0] correct_door_1, correct_door_2, p1_lives, p2_lives, player_1_pos, player_2_pos,
+	input  logic resume, reset, time_up,
 	output logic [23:0] rgb_color
 );
 
-logic [9:0] x = 0;  
-logic [9:0] y = 0;  
+logic [9:0] x;  
+logic [9:0] y;  
 logic [9:0] x_max = 799;
 logic [9:0] y_max = 524;
 logic done;
@@ -14,6 +14,7 @@ logic done;
 counter #(10) counter_x(.clk(clk), .enable(1), .reset(reset), .max(x_max), .done(done), .q(x));
 counter #(10) counter_y(.clk(clk), .enable(done), .reset(reset), .max(y_max), .done(), .q(y));
  
+
 
 parameter hori_back  = 144;
 parameter vert_back  = 34;
@@ -143,7 +144,7 @@ always @ (posedge clk)
 			else if(y > offset_y && y <= 317)
 				begin
 					if(x >= offset_x && x < 352) begin
-						if(correct_door == 2'b00 && time_up) begin
+						if((correct_door_1 == 2'b00 || correct_door_2 == 2'b00) && !resume && time_up) begin
 							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x);
 							color <= memory_open[open_address];
 						end
@@ -153,17 +154,17 @@ always @ (posedge clk)
 						end
 					end
 					else if(x >= 352 && x < 464) begin
-						if(correct_door == 2'b01 && time_up) begin
-							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH;
+						if((correct_door_1 == 2'b01 || correct_door_2 == 2'b01)  && !resume && time_up) begin
+							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x + 1) - DOOR_WIDTH;
 							color <= memory_open[open_address];
 						end
 						else begin
-							closed_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH;
+							closed_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x + 1) - DOOR_WIDTH;
 							color <= memory_closed[closed_address];
 						end
 					end
 					else if(x >= 464 && x < 576) begin
-						if(correct_door == 2'b10 && time_up) begin
+						if((correct_door_1 == 2'b10 || correct_door_2 == 2'b10)  && !resume && time_up) begin
 							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*2;
 							color <= memory_open[open_address];
 						end
@@ -173,7 +174,7 @@ always @ (posedge clk)
 						end
 					end
 					else if(x >= 576 && x < 688) begin
-						if(correct_door == 2'b11 && time_up) begin
+						if((correct_door_1 == 2'b11 || correct_door_2 == 2'b11)  && !resume && time_up) begin
 							open_address <= ((y - offset_y) * (DOOR_WIDTH)) + (x - offset_x) - DOOR_WIDTH*3;
 							color <= memory_open[open_address];
 						end
@@ -188,7 +189,7 @@ always @ (posedge clk)
 			// Players //////////////////////////////////////////////////////////////////////
 			else if(y > player_offset_y && y <= 349) begin
 				if(x >= p1_offset_x && x < 280) begin
-					if(player_1_pos == 2'b00) begin
+					if(player_1_pos == 2'b00 && p1_lives > 0 && (correct_door_1 == 2'b00 || correct_door_2 == 2'b00 || ~time_up)) begin
 						p1_address <= ((y - player_offset_y) * (PLAYER_WIDTH)) + (x - p1_offset_x);
 						color <= memory_player_1[p1_address];
 					end
@@ -196,7 +197,7 @@ always @ (posedge clk)
 						color <= 4'b1110;
 				end
 				else if(x >= p2_offset_x && x < 336) begin
-					if(player_2_pos == 2'b00) begin
+					if(player_2_pos == 2'b00 && p2_lives > 0 && (correct_door_1 == 2'b00 || correct_door_2 == 2'b00 || ~time_up)) begin
 						p2_address <= ((y - player_offset_y) * (PLAYER_WIDTH)) + (x - p2_offset_x);
 						color <= memory_player_2[p2_address];
 					end
@@ -205,7 +206,7 @@ always @ (posedge clk)
 				end
 				//-------------------------------------------------------
 				else if(x >= 368 && x < 392) begin
-					if(player_1_pos == 2'b01) begin
+					if(player_1_pos == 2'b01 && p1_lives > 0 && (correct_door_1 == 2'b01 || correct_door_2 == 2'b01 || ~time_up)) begin
 						p1_address <= ((y - player_offset_y) * (PLAYER_WIDTH)) + (x - p1_offset_x - DOOR_WIDTH) - PLAYER_WIDTH;
 						color <= memory_player_1[p1_address];
 					end
@@ -213,7 +214,7 @@ always @ (posedge clk)
 						color <= 4'b1110;
 				end
 				else if(x >= 424 && x < 448) begin
-					if(player_2_pos == 2'b01) begin
+					if(player_2_pos == 2'b01 && p2_lives > 0 && (correct_door_1 == 2'b01 || correct_door_2 == 2'b01 || ~time_up)) begin
 						p2_address <= ((y - player_offset_y) * (PLAYER_WIDTH)) + (x - p2_offset_x - DOOR_WIDTH) - PLAYER_WIDTH;
 						color <= memory_player_2[p2_address];
 					end
@@ -222,7 +223,7 @@ always @ (posedge clk)
 				end
 				//-------------------------------------------------------
 				else if(x >= 480 && x < 504) begin
-					if(player_1_pos == 2'b10) begin
+					if(player_1_pos == 2'b10 && p1_lives > 0 && (correct_door_1 == 2'b10 || correct_door_2 == 2'b10 || ~time_up)) begin
 						p1_address <= ((y - player_offset_y+2) * (PLAYER_WIDTH)) + (x - p1_offset_x - DOOR_WIDTH*2) - PLAYER_WIDTH*2;
 						color <= memory_player_1[p1_address];
 					end
@@ -230,7 +231,7 @@ always @ (posedge clk)
 						color <= 4'b1110;
 				end
 				else if(x >= 536 && x < 560) begin
-					if(player_2_pos == 2'b10) begin
+					if(player_2_pos == 2'b10 && p2_lives > 0 && (correct_door_1 == 2'b10 || correct_door_2 == 2'b10 || ~time_up)) begin
 						p2_address <= ((y - player_offset_y+2) * (PLAYER_WIDTH)) + (x - p2_offset_x - DOOR_WIDTH*2) - PLAYER_WIDTH*2;
 						color <= memory_player_2[p2_address];
 					end
@@ -239,7 +240,7 @@ always @ (posedge clk)
 				end
 				//-------------------------------------------------------
 				else if(x >= 592 && x < 616) begin
-					if(player_1_pos == 2'b11) begin
+					if(player_1_pos == 2'b11 && p1_lives > 0 && (correct_door_1 == 2'b11 || correct_door_2 == 2'b11 || ~time_up)) begin
 						p1_address <= ((y - player_offset_y+2) * (PLAYER_WIDTH)) + (x - p1_offset_x - DOOR_WIDTH*3) - PLAYER_WIDTH*3;
 						color <= memory_player_1[p1_address];
 					end
@@ -247,7 +248,7 @@ always @ (posedge clk)
 						color <= 4'b1110;
 				end
 				else if(x >= 648 && x < 672) begin
-					if(player_2_pos == 2'b11) begin
+					if(player_2_pos == 2'b11 && p2_lives > 0 && (correct_door_1 == 2'b11 || correct_door_2 == 2'b11 || ~time_up)) begin
 						p2_address <= ((y - player_offset_y+2) * (PLAYER_WIDTH)) + (x - p2_offset_x - DOOR_WIDTH*3) - PLAYER_WIDTH*3;
 						color <= memory_player_2[p2_address];
 					end
