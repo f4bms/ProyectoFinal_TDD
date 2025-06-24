@@ -4,8 +4,7 @@ module RegisterFile(
     input logic [31:0] WD3, // Dato a escribir
     input logic [31:0] R15,
     input logic WE, // Señal de escritura
-    output logic [31:0] RD1, RD2, // Datos leídos
-    output logic [15:0][31:0] leds_registers // Salida de todos los registros
+    output logic [31:0] RD1, RD2
 );
 
     logic [31:0] registers [15:0] = '{default:32'd0}; // 16 registros de 32 bits
@@ -17,8 +16,6 @@ module RegisterFile(
         end else if (WE && A3 != 4'b1111) begin // No escribir en R15 (PC)
             registers[A3] <= WD3;
         end
-        // Actualiza leds_registers
-        for (int i = 0; i < 16; i++) leds_registers[i] <= registers[i];
     end
 
     // Lectura combinacional

@@ -9,8 +9,7 @@ module ControlUnit(
     output logic ALUSrcA, ALUSrcB,
     output logic [1:0] ImmSrc,
     output logic RegWrite,
-    output logic [1:0] RegSrc,
-    output logic [1:0] F32
+    output logic [1:0] RegSrc
 );
 
     logic [5:0] Funct;
@@ -54,8 +53,7 @@ module ControlUnit(
         .MemW(MemW),
         .PCSrc(PCSrc),
         .RegWrite(RegWrite),
-        .MemWrite(MemWrite),
-        .F32(F32)
+        .MemWrite(MemWrite)
     );
 
     

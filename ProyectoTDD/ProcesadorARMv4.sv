@@ -4,10 +4,7 @@ module ProcesadorARMv4(
     output logic [31:0] PC, // Contador de Programa
     output logic [31:0] WriteDataMem, AddressDataMem, // Datos a escribir en memoria
     output logic WriteEnableMem, // Habilitar escritura en memoria
-    input logic [31:0] ReadData, // Datos leídos de memoria
-    output logic [15:0][31:0] leds_registers // Salida para los LEDs de los registros
-    , output logic [31:0] ALUres // Salida para el PC + 8
-    , output logic [1:0] F32
+    input logic [31:0] ReadData
 
 ); 
 
@@ -30,7 +27,6 @@ module ProcesadorARMv4(
     logic [31:0] ALUInputA, ALUInputB; // Entrada B de la ALU
     logic [31:0] ExtImm; // Inmediato extendido
 
-    assign ALUres = ALUResult; // Salida para el resultado de la ALU
 
     // Unidad de control
     ControlUnit ctrl_unit (
@@ -46,8 +42,7 @@ module ProcesadorARMv4(
         .ALUSrcB(ALUSrcB),
         .ImmSrc(ImmSrc),
         .RegWrite(RegWrite),
-        .RegSrc(RegSrc),
-        .F32(F32)
+        .RegSrc(RegSrc)
     );
 
     // Contador de Programa (PC)
@@ -104,7 +99,6 @@ module ProcesadorARMv4(
         .WE(RegWrite), // Señal de escritura
         .RD1(RD1), // Dato leído del registro A1
         .RD2(RD2) // Dato leído del registro A2
-        , .leds_registers(leds_registers) // Salida para los LEDs de los registros
     );
 
     // ALU

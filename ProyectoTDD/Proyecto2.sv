@@ -12,8 +12,6 @@ module Proyecto2( // No es proyecto 1?
     output logic [7:0] VGA_G,
     output logic [7:0] VGA_B,
     output logic VGA_BLANK_N
-    //output logic [15:0][31:0] leds_registers,
-    //output logic [31:0] instrucciones
 );
 
 //  ----------------- Memoria de instrucciones -------------------
@@ -43,10 +41,7 @@ ProcesadorARMv4 proc (
     .WriteDataMem(WriteDataMem),
     .AddressDataMem(AddressDataMem),
     .WriteEnableMem(WriteEnableMem), // No se escribe en memoria en este momento
-    .ReadData(ReadData),
-    .leds_registers() // Salida para los LEDs de los registros
-    , .ALUres() // Salida para el resultado de la ALU
-    , .F32()
+    .ReadData(ReadData)
 );
 
 // ----------------- Memoria de video -------------------
@@ -54,21 +49,30 @@ ProcesadorARMv4 proc (
 
 logic [31:0] VGAAddr, DataVideo; // Dirección de memoria para lectura
 logic time_up = 0;
+logic [1:0] player_1_pos;
+logic [1:0] player_2_pos;
+
+logic [1:0] correct_door_1;
+logic [1:0] correct_door_2;
+logic [1:0] p1_lives;
+logic [1:0] p2_lives;
 
 DataMemory video_memory(
    .clk(VGA_CLK),
 	.reset(reset),
 	.addr_A(AddressDataMem),  // Dirección de memoria para escritura
-	.addr_B(VGAAddr), // Dirección de memoria para lectura de VGA
 	.WD(WriteDataMem), // Datos a escribir
 	.WE(WriteEnableMem), // Señal de escritura
 	.posJ1(SW[7:4]), // Botones del jugador 1
 	.posJ2(SW[3:0]), // Botones del jugador 2
 	.time_up(time_up), // Indica si el tiempo se ha agotado
 	.RD(ReadData), // Datos leídos de memoria
-	.DataVideo(DataVideo), // Datos de video para VGA
 	.pos_J1(player_1_pos),
-	.pos_J2(player_2_pos)
+	.pos_J2(player_2_pos),
+	.p1_lives(p1_lives), // Vidas del jugador 1
+	.p2_lives(p2_lives), // Vidas del jugador 2
+	.correct_door_1(correct_door_1), // Puerta correcta del jugador
+	.correct_door_2(correct_door_2) // Puerta correcta del jugador 2
 );
 
 
@@ -81,12 +85,8 @@ clock_div clock_divider(
 
 logic [23:0] rgb_color;
 
-logic [1:0] correct_door_1;
-logic [1:0] correct_door_2;
-logic [1:0] p1_lives;
-logic [1:0] p2_lives;
-logic [1:0] player_1_pos;
-logic [1:0] player_2_pos;
+
+
 
 logic resume;
 
@@ -105,7 +105,7 @@ counter #(25) counter_pause(
 
 logic [3:0] seg_0, seg_1;
 logic [3:0] tics;
-logic [3:0] max_time = 4'd10;
+logic [3:0] max_time = 4'd5;
 logic enable = 1;
 logic [11:0] bcd_time;
 
@@ -168,33 +168,6 @@ end
 
 logic [3:0] count;
 counter #(4) counter_read(.clk(VGA_CLK), .enable(1), .reset(reset), .max(4'b0010), .done(), .q(count));
-
-// Datos del procesador a la memoria de video
-// Addr 6000: vidas del jugador 1
-// Addr 7000: vidas del jugador 2
-// Addr 8000: puertas correctas (1100 = puertas 1 y 2 correctas)
-// Addr 9000: posición del jugador 1 (00 = puerta 1, 01 = puerta 2, 10 = puerta 3, 11 = puerta 4)
-// Addr 10000: posición del jugador 2 (00 = puerta 1, 01 = puerta 2, 10 = puerta 3, 11 = puerta 4)
-always_ff @(posedge VGA_CLK) begin
-	if(count == 4'b0000) begin
-		VGAAddr <= 32'h00006000;
-		p1_lives <= DataVideo[1:0];
-		LEDR[9:8] <= p1_lives;
-	end
-	else if(count == 4'b0001) begin
-		VGAAddr <= 32'h00007000;
-		p2_lives <= DataVideo[1:0];
-		LEDR[7:6] <= p2_lives;
-	end
-	else if(count == 4'b0010) begin
-		VGAAddr <= 32'h00008000;
-		correct_door_1 <= DataVideo[1:0];
-		correct_door_2 <= DataVideo[3:2];
-		LEDR[5:4] <= correct_door_1;
-		LEDR[3:2] <= correct_door_2;
-
-	end		
-end
 
 
 

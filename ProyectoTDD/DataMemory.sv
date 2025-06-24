@@ -2,16 +2,18 @@ module DataMemory(
     input logic clk,
     input logic reset,
     input logic [31:0] addr_A,  // Dirección de memoria
-    input logic [31:0] addr_B, // Dirección de memoria para lectura de VGA
     input logic [31:0] WD, // Datos a escribir
     input logic WE, // Señal de escritura
 	 input logic [3:0]   posJ1,
 	 input logic [3:0]   posJ2,
     input logic time_up,
     output logic [31:0] RD, // Datos leídos
-    output logic [31:0] DataVideo, // Datos de video para VGA
-	 output logic [1:0] pos_J1,
-	 output logic [1:0] pos_J2
+    output logic [1:0] pos_J1,
+    output logic [1:0] pos_J2,
+    output logic [1:0] p1_lives, // Vidas del jugador 1
+    output logic [1:0] p2_lives, // Vidas del jugador 2
+    output logic [1:0] correct_door_1, // Puerta correcta del jugador 1
+    output logic [1:0] correct_door_2 // Puerta correcta del jugador 2
 );
 
     // Instancia del módulo Deco
@@ -37,27 +39,23 @@ module DataMemory(
 	 
     //la vga no ocupa escribir en memoria entonces el enable de b y el dato no se ocupan
         
-    ram_vid mi_ram (
-            .address_a((addr_A == 32'h00006000) ? 3'd0 :
-                       (addr_A == 32'h00007000) ? 3'd1 :
-                       (addr_A == 32'h00008000) ? 3'd2 :
-                       (addr_A == 32'h00009000) ? 3'd3 :
-                       (addr_A == 32'h00010000) ? 3'd4 :
-                       3'd0), // default a 0 si no coincide
-            .address_b((addr_B == 32'h00006000) ? 3'd0 :
-                       (addr_B == 32'h00007000) ? 3'd1 :
-                       (addr_B == 32'h00008000) ? 3'd2 :
-                       (addr_B == 32'h00009000) ? 3'd3 :
-                       (addr_B == 32'h00010000) ? 3'd4 :
-                       3'd0), // default a 0 si no coincide
-            .clock(clk),
-            .data_a(WD), //dato que se va a escribir
-            .data_b(32'b0), //no ocupo que escriba
-            .wren_a(wenRAM),  //enable para escribir
-            .wren_b(1'b0), //no sirve
-            .q_a(RDataRAM), 
-            .q_b(DataVideo)
-        );
+    VideoRam video_ram (
+        .clk(clk),
+        .reset(reset),
+        .addr((addr_A == 32'h00006000) ? 32'd0 :
+                (addr_A == 32'h00007000) ? 32'd1 :
+                (addr_A == 32'h00008000) ? 32'd2 :
+                (addr_A == 32'h00009000) ? 32'd3 :
+                (addr_A == 32'h00010000) ? 32'd4 :
+                3'd0),  // Dirección de memoria para lectura de VGA
+        .WD(WD), // Datos a escribir
+        .WE(wenRAM), // No se escribe en la memoria de video
+        .RD(RDataRAM), // Datos leídos de la memoria de video
+        .p1_lives(p1_lives), // Vidas del jugador 1
+        .p2_lives(p2_lives), // Vidas del jugador 2
+        .correct_door_1(correct_door_1), // Puerta correcta del jugador 1
+        .correct_door_2(correct_door_2)  // Puerta correcta del jugador 2
+    );
         
     readMUX mux_u(
         .rdsel(rdsel),
