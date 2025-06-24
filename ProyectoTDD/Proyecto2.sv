@@ -94,7 +94,7 @@ logic [24:0] sec_1 = 25'd25_000_000;
 counter #(25) counter_pause(
 	.clk(VGA_CLK), 
 	.enable(time_up), 
-	.reset(reset), 
+	.reset(reset || (p1_lives == 0) || (p2_lives == 0)), 
 	.max(sec_1), 
 	.done(resume), 
 	.q()
